@@ -1,0 +1,33 @@
+.wrapper {
+    width: 100%;
+    max-width: 1920px;
+    margin: auto;
+}
+
+.displayArea{
+    height: 500px;
+    min-height: 50vh;
+    width: 100%;
+    background-color: blue;
+    padding: 75px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#drinkIngredients {
+    height: 250px;
+    width: 500px;
+    background-color: yellow;
+}
+
+#drinkInstructions {
+    height: 250px;
+    width: 400px;
+    background-color: orange;
+}
+
+.bottomArea{
+    height: 300px;
+    min-height: 35vh;
+    background-color: red;
+}

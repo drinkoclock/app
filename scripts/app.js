@@ -4,11 +4,14 @@ const drinkApp = {};
 // identifies form & dropdown items to track submission
 const drinkChoice = document.getElementById('alcoholType');
 const form = document.querySelector('form');
+const drinkInstructions = document.getElementById('drinkInstructions');
+const drinkIngredients = document.getElementById('drinkIngredients');
 
 // API URL and extensions used to find 
 drinkApp.URL = 'https://www.thecocktaildb.com/api/json/v1/1/';
-drinkApp.findDrink = 'filter.php'
-drinkApp.drinkDetails = 'lookup.php'
+drinkApp.findDrink = 'filter.php';
+drinkApp.drinkDetails = 'lookup.php';
+drinkApp.randomDrink = 'random.php';
 
 // accepts an array, checks length, and returns a random number within range
 function randNum(array) {
@@ -56,8 +59,14 @@ drinkApp.init = () => {
         e.preventDefault();
         // saves user choice from dropdown list
         drinkApp.drink = drinkChoice.value;
-        // calls function to grab information regarding drink
-        drinkApp.grabData();
+        console.log(drinkApp.drink);
+       
+        // checks to see if user has made a selection before making fetch request
+        if (drinkApp.drink) {
+            drinkApp.grabData();
+        } else {
+            alert('pick something');
+        }        
     })
 }
 
