@@ -166,11 +166,44 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Archivo Black";
+  src: url(../fonts/Archivo_Black/ArchivoBlack-Regular.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Red Hat Display";
+  src: url(../fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf);
+  font-weight: 125 950;
+  font-stretch: 75% 125%;
+  font-style: oblique 0deg 12deg;
+}
+h1 {
+  font-size: 1.8rem;
+  margin-left: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+html {
+  font-size: 125%;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 100px;
+  font-family: "Archivo Black";
+  color: #232323;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+  background-color: #232323;
+}
+nav img {
+  max-width: 70px;
 }
 
 .wrapper {
@@ -207,12 +240,12 @@ nav {
 .bottomArea {
   height: 300px;
   min-height: 35vh;
-  background-color: red;
+  background-color: #232323;
 }
 
 footer {
   height: 50px;
-  background-color: black;
+  background-color: #3b3b3b;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -232,8 +265,11 @@ footer span {
 form {
   position: relative;
   top: -100px;
-  background-color: white;
+  background-color: #3b3b3b;
   height: 200px;
   width: 80%;
   margin: auto;
+  border-radius: 40px;
+  -webkit-box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
+          box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
 }

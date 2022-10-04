@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 .wrapper {
     width: 100%;
     max-width: 1920px;
@@ -29,5 +31,5 @@
 .bottomArea{
     height: 300px;
     min-height: 35vh;
-    background-color: red;
+    background-color: $dark-grey;
 }

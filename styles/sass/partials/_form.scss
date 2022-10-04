@@ -1,8 +1,12 @@
+@use "variables" as *;
+
 form {
     position: relative;
     top: -100px;
-    background-color: white;
+    background-color: $mid-grey;
     height: 200px;
     width: 80%;
     margin: auto;
+    border-radius: 40px;
+    box-shadow: 0 0 30px rgba($color: $dark-grey, $alpha: 0.6);
 }
