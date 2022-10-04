@@ -133,7 +133,7 @@ drinkApp.populateIngredients = (drink) => {
         else break;
     }
     // when for loop is complete, closes table
-    drinkApp.ingredients.firstElementChild.innerHTML += "</tbody></table";
+    drinkApp.ingredients.firstElementChild.innerHTML += "</tbody></table>";
 }
 
 // app init creates form event listener for submission

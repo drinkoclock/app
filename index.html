@@ -20,13 +20,13 @@
             </div>
         </header>
         <main>
-            <section class="displayArea">
-                <div id="drinkIngredients"></div>
-                <div id="drinkInstructions"></div>
-            </section>
             <section class="bottomArea">
+                <section class="displayArea">
+                    <div id="drinkIngredients"></div>
+                    <div id="drinkInstructions"></div>
+                </section>
                 <form action="">
-                    <label for="alcoholType">Alcohol</label>
+                    <label for="alcoholType">Choose an alcohol:</label>
                     <select name="alcoholType" id="alcoholType">
                         <option value="">Choose your alcohol</option>
                         <option value="gin">Gin</option>
@@ -38,8 +38,10 @@
                         <option value="coffee liqueur">Coffee Liqueur</option>
                         <option value="yoghurt">Yoghurt</option>
                     </select>
-                    <button id="alcoholTypeBtn">Go!</button>
-                    <button id="alcoholRandom">random</button>
+                    <div class="buttonContainer">
+                        <button id="alcoholTypeBtn">Go!</button>
+                        <button id="alcoholRandom">random</button>
+                    </div>
                 </form>
             </section>
         </main>

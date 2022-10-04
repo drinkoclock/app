@@ -4,9 +4,59 @@ form {
     position: relative;
     top: -100px;
     background-color: $mid-grey;
-    height: 200px;
+    max-width: 800px;
     width: 80%;
     margin: auto;
     border-radius: 40px;
     box-shadow: 0 0 30px rgba($color: $dark-grey, $alpha: 0.6);
+    color: white;
+    font-family: 'Red Hat Display';
+    text-align: center;
+    padding: 40px;
+}
+
+label {
+    font-weight: 400;
+}
+
+select {
+    display: block;
+    width: 80%;
+    margin: 8px auto 40px;
+    font-weight: 500;
+    color: $dark-grey;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid $dark-grey;
+    option {
+        font-family: sans-serif;
+        font-weight: 500;
+    }
+}
+
+.buttonContainer {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    font-weight: 900;
+    width: 46%;
+    padding: 10px;
+    border-radius: 24px;
+    border: none;
+    color: $dark-grey;
+
+}
+
+#alcoholTypeBtn {
+    background-color: $accent-yellow;
+    box-shadow: 0 6px 0 $shade-yellow;
+    transition: 0.1s all;
+    &:hover, &:focus {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 $shade-yellow;
+    }
 }
