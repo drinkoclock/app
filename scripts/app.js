@@ -17,10 +17,18 @@ function randNum(array) {
 }
 
 // when user selects from dropdown menu, will return a drink based on alcohol type and reset the field (avoids user selecting no value && allows user to choose the same alcohol type multiple times in a row)
-drinkApp.dropdown = function () {
-    document.querySelector('#alcoholType').addEventListener('change', function (e) {
-        drinkApp.selectDrink(this.value);
-        this.value = "";
+drinkApp.select = function () {
+    document.querySelector('#alcoholTypeBtn').addEventListener('click', function (e) {
+         // prevents page reload
+         e.preventDefault();
+         // saves user choice from dropdown list
+         const drink = document.querySelector('#alcoholType').value;
+         // checks to see if user has made a selection before making fetch request
+         if (drink) {
+             drinkApp.selectDrink(drink);
+         } else {
+             alert('pick something');
+         }
     })
 }
 
@@ -42,7 +50,9 @@ drinkApp.selectDrink = (alcType) => {
 
     fetch(drinkApp.url)
         .then((promise) => promise.json())
-        .then((data) => drinkApp.getDrinkDetails(data.drinks[randNum(data.drinks)].idDrink))
+        .then((data) => {
+            drinkApp.getDrinkDetails(data.drinks[randNum(data.drinks)].idDrink)
+        })
         .catch((e) => console.log("error: ", e))
 }
 
@@ -57,6 +67,9 @@ drinkApp.getDrinkDetails = (id) => {
             drinkApp.recDrink = data.drinks[0];
             drinkApp.populateInstructions(drinkApp.recDrink.strInstructions);
             drinkApp.populateIngredients(drinkApp.recDrink);
+            document.querySelector('title').innerHTML = `Drink O'Clock - ${drinkApp.recDrink.strDrink}`
+            console.log(data)
+            return data;
         })
         .catch((e) => console.log("error: ", e))
 }
@@ -125,7 +138,7 @@ drinkApp.populateIngredients = (drink) => {
 
 // app init creates form event listener for submission
 drinkApp.init = () => {
-    drinkApp.dropdown();
+    drinkApp.select();
     drinkApp.random();
 }
 
