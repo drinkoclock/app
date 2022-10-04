@@ -24,17 +24,25 @@ drinkApp.dropdown = function () {
     })
 }
 
-// function that uses URL & search to take user input (alcohol type) to return a random drink ID from list containing that alcohol, before passing to another function
+// on button click, will prevent page refresh and return a random drink
+drinkApp.random = function () {
+    document.querySelector('#alcoholRandom').addEventListener('click', function (e) {
+        e.preventDefault();
+        drinkApp.selectDrink('random');
+    })
+}
 
+// function that uses URL & search to take user input (alcohol type) to return a random drink ID from list containing that alcohol, before passing to another function (now also includes a check for random)
 drinkApp.selectDrink = (alcType) => {
-    const url = new URL(drinkApp.baseUrl + drinkApp.findDrink);
-    url.search = new URLSearchParams({ i: alcType })
-    fetch(url)
+    if (alcType === "random") drinkApp.url = new URL(drinkApp.baseUrl + drinkApp.randomDrink);
+    else {
+        drinkApp.url = new URL(drinkApp.baseUrl + drinkApp.findDrink);
+        drinkApp.url.search = new URLSearchParams({ i: alcType })
+    }
+
+    fetch(drinkApp.url)
         .then((promise) => promise.json())
-        .then((data) => {
-            const recDrink = (data.drinks[randNum(data.drinks)].idDrink)
-            drinkApp.getDrinkDetails(recDrink)
-        })
+        .then((data) => drinkApp.getDrinkDetails(data.drinks[randNum(data.drinks)].idDrink))
         .catch((e) => console.log("error: ", e))
 }
 
@@ -86,7 +94,7 @@ drinkApp.populateInstructions = (inst) => {
         }
     }
     // closes the ordered list
-    drinkApp.instructions.innerHTML += "</ol>"
+    drinkApp.instructions.innerHTML += "</ol>";
 }
 
 // inserts ingredient list & measurements from API into the HTML element
@@ -99,12 +107,12 @@ drinkApp.populateIngredients = (drink) => {
         const ingVar = `strIngredient${i}`;
         const ingMeasVar = `strMeasure${i}`;
 
-        // checks to see if the current ingredient exists, then inserts them into the table if they are
+        // checks to see if the current ingredient exists, then inserts them into the table if they are. There are instances of ingredients w/o measurements, so empty space is added instead of showing null
         if (drink[ingVar]) {
             drinkApp.ingredients.firstElementChild.innerHTML += `
             <tr>
-                <td>${drink[ingVar]}</td>
-                <td>${drink[ingMeasVar]}</td>
+                <td>${(!drink[ingMeasVar] ? '' : drink[ingMeasVar])}</td>
+                <td>${drink[ingVar]}</td>                
             </tr>
             `
         }
@@ -112,12 +120,13 @@ drinkApp.populateIngredients = (drink) => {
         else break;
     }
     // when for loop is complete, closes table
-    drinkApp.ingredients.firstElementChild.innherHTML += "</tbody></table";
+    drinkApp.ingredients.firstElementChild.innerHTML += "</tbody></table";
 }
 
 // app init creates form event listener for submission
 drinkApp.init = () => {
     drinkApp.dropdown();
+    drinkApp.random();
 }
 
 // calls init method on page initialization
