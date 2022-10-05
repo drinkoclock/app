@@ -10,7 +10,9 @@
 </head>
 
 <body>
+    
     <div class="wrapper">
+        
         <header>
             <div class="wrapper">
                 <nav>
@@ -19,12 +21,9 @@
                 </nav>
             </div>
         </header>
+        
         <main>
-            <section class="bottomArea">
-                <section class="displayArea">
-                    <div id="drinkIngredients"></div>
-                    <div id="drinkInstructions"></div>
-                </section>
+            <div class="contentContainer">
                 <form action="">
                     <label for="alcoholType">Choose an alcohol:</label>
                     <select name="alcoholType" id="alcoholType">
@@ -40,15 +39,22 @@
                     </select>
                     <div class="buttonContainer">
                         <button id="alcoholTypeBtn">Go!</button>
-                        <button id="alcoholRandom">random</button>
+                        <button id="alcoholRandom">Choose for me</button>
                     </div>
                 </form>
-            </section>
+                <section class="displayArea">
+                    <div id="drinkIngredients"></div>
+                    <div id="drinkInstructions"></div>
+                </section>
+            </div>        
         </main>
+        
         <footer>
             <span>Created by Joel Nash & Karl Lu at Juno College 2022</span>
         </footer>
+
     </div>
+
     <script src="./scripts/app.js"></script>
 </body>
 

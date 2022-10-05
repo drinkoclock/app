@@ -221,12 +221,30 @@ nav img {
   margin: auto;
 }
 
+main {
+  background-color: #232323;
+  height: 450px;
+}
+
+.contentContainer {
+  position: relative;
+  top: -200px;
+  background-color: #3b3b3b;
+  max-width: 800px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 40px;
+  -webkit-box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
+          box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
+  color: white;
+  font-family: "Red Hat Display";
+  text-align: center;
+  padding: 60px 40px;
+  margin-bottom: -300px;
+}
+
 .displayArea {
-  height: 500px;
-  min-height: 50vh;
   width: 100%;
-  background-color: blue;
-  padding: 75px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -236,20 +254,14 @@ nav img {
 
 #drinkIngredients {
   height: 250px;
-  width: 500px;
+  width: 50%;
   background-color: yellow;
 }
 
 #drinkInstructions {
   height: 250px;
-  width: 400px;
+  width: 50%;
   background-color: orange;
-}
-
-.bottomArea {
-  height: 300px;
-  min-height: 35vh;
-  background-color: #232323;
 }
 
 footer {
@@ -272,19 +284,7 @@ footer span {
 }
 
 form {
-  position: relative;
-  top: -100px;
-  background-color: #3b3b3b;
-  max-width: 800px;
-  width: 80%;
-  margin: auto;
-  border-radius: 40px;
-  -webkit-box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
-          box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
-  color: white;
-  font-family: "Red Hat Display";
-  text-align: center;
-  padding: 40px;
+  margin-bottom: 40px;
 }
 
 label {
