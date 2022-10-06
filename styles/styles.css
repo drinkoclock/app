@@ -185,6 +185,34 @@ h1 {
   text-transform: uppercase;
 }
 
+h2 {
+  font-family: "Archivo Black";
+  font-size: 3rem;
+  margin: 30px 0 8px 0;
+  padding: 0;
+  color: #ffe600;
+}
+
+h3 {
+  font-family: "Archivo Black";
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+li {
+  padding-bottom: 14px;
+  line-height: 1.2rem;
+  font-weight: 350;
+}
+
+::marker {
+  font-weight: 600;
+  color: #ffe600;
+}
+
 html {
   font-size: 125%;
 }
@@ -239,7 +267,7 @@ main {
   color: white;
   font-family: "Red Hat Display";
   text-align: center;
-  padding: 60px 40px;
+  padding: 20px 0;
   margin-bottom: -300px;
 }
 
@@ -248,20 +276,112 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  position: relative;
+}
+
+#drinkImage {
+  width: 160px;
+  height: 160px;
+  border: 14px solid #232323;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  top: -160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#drinkImage img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#drinkHeader {
+  background-color: #232323;
+  min-height: 100px;
+  width: 100%;
+  margin-top: -40px;
+  border-radius: 40px 40px 0 0;
+}
+
+#drinkGlass {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 6px;
+  padding: 20px 0 24px;
+  margin: 10px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+#drinkGlass img {
+  width: 60px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#drinkGlass img:hover #drinkGlass img:focus {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 #drinkIngredients {
-  height: 250px;
-  width: 50%;
-  background-color: yellow;
+  padding: 20px 20px 20px 40px;
+  width: 400px;
+}
+
+table {
+  display: block;
+  margin-top: 20px;
+  padding: 0 0 0 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
+          box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
+}
+
+tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  display: block;
+  width: 340px;
+  margin: 0 -20px;
+}
+
+tbody:last-child tr {
+  border-bottom: none;
+}
+
+td {
+  text-align: left;
+  padding: 12px 20px 12px 30px;
+  font-weight: 100;
+}
+td:first-child {
+  text-align: right;
+  padding-left: 0;
+  font-weight: 500;
+  width: 110px;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffe600;
 }
 
 #drinkInstructions {
-  height: 250px;
+  padding: 20px 40px 20px 20px;
   width: 50%;
-  background-color: orange;
+  text-align: left;
 }
 
 footer {

@@ -23,24 +23,102 @@ main {
     color: white;
     font-family: 'Red Hat Display';
     text-align: center;
-    padding: 60px 40px;
+    padding: 20px 0;
     margin-bottom: -300px;
 }
 
-.displayArea{
+.displayArea {
     width: 100%;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
+    position: relative;
+}
+
+#drinkImage {
+    width: 160px;
+    height: 160px;
+    border: 14px solid $dark-grey;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    top: -160px;
+    display: flex;
+    align-items: center;
+    img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+    }
+}
+
+#drinkHeader {
+    background-color: $dark-grey;
+    min-height: 100px;
+    width: 100%;
+    margin-top: -40px;
+    border-radius: 40px 40px 0 0;
+}
+
+#drinkGlass {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 20px 0 24px;
+    margin: 10px 40px;
+    border-bottom: 1px solid rgba($color: white, $alpha: 0.3);
+    img {
+        width: 60px;
+        transition: all 0.3s;
+        &:hover &:focus {
+            transform: scale(1.05);
+        }
+
+    }
 }
 
 #drinkIngredients {
-    height: 250px;
-    width: 50%;
-    background-color: yellow;
+    padding: 20px 20px 20px 40px;
+    width: 400px;
+}
+
+table {
+    display: block;
+    margin-top: 20px;
+    padding: 0 0 0 20px;
+    background-color: rgba($color: white, $alpha: 0.05);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba($color: $dark-grey, $alpha: 0.6);
+}
+
+tr {
+    border-bottom: 1px solid rgba($color: white, $alpha: 0.3);
+    display: block;
+    width: 340px;
+    margin: 0 -20px;
+}
+
+tbody:last-child tr {
+    border-bottom: none;
+}
+
+td {
+    text-align: left;
+    padding: 12px 20px 12px 30px;
+    font-weight: 100;
+    &:first-child {
+        text-align: right;
+        padding-left: 0;
+        font-weight: 500;
+        width: 110px;
+        border-right: 1px solid rgba($color: white, $alpha: 0.3);
+        color: $accent-yellow;
+    }
 }
 
 #drinkInstructions {
-    height: 250px;
+    padding: 20px 40px 20px 20px;
     width: 50%;
-    background-color: orange;
+    text-align: left;
 }
