@@ -11,32 +11,35 @@ const drinkApp = {
 
     // function that uses URL & search to take user input (alcohol type) to return a random drink ID from list containing that alcohol, before passing to another function (now also includes a check for random)
     selectDrink: async (alcType) => {
-        if (alcType === "random") drinkApp.url = new URL(drinkApp.baseUrl + drinkApp.randomDrink);
-        else {
-            drinkApp.url = new URL(drinkApp.baseUrl + drinkApp.findDrink);
-            drinkApp.url.search = new URLSearchParams({ i: alcType })
-        }
-        // will keep running until it returns a drink with English instructions (not all drinks in the API have English instructions)
-        let i = 1;
-        while (i > 0) {
-            const id = await fetch(drinkApp.url)
-                .then((promise) => promise.json())
-                .then((data) => data.drinks[randNum(data.drinks)].idDrink)
-                .catch((e) => console.log("error: ", e))
-
-            // next call obtains further information about drink (glass type, ingredients, instructions)
-            const url = new URL(drinkApp.baseUrl + drinkApp.drinkDetails);
-            url.search = new URLSearchParams({ i: id })
-            const response = await fetch(url)
-                .then((promise) => promise.json())
-                .then((data) => data.drinks[0])
-                .catch((e) => console.log("error: ", e))
-            if (response.strInstructions) {
-                drinkApp.populateInstructions(response.strInstructions)
-                drinkApp.populateIngredients(response);
-                document.querySelector('title').innerHTML = `Drink O'Clock - ${response.strDrink}`
-                i = 0;
+        try {
+            if (alcType === "random") drinkApp.url = new URL(drinkApp.baseUrl + drinkApp.randomDrink);
+            else {
+                drinkApp.url = new URL(drinkApp.baseUrl + drinkApp.findDrink);
+                drinkApp.url.search = new URLSearchParams({ i: alcType })
             }
+            // will keep running until it returns a drink with English instructions (not all drinks in the API have English instructions)
+            while (1 > 0) {
+                const id = await fetch(drinkApp.url)
+                    .then((promise) => promise.json())
+                    .then((data) => data.drinks[randNum(data.drinks)].idDrink)
+
+                // next call obtains further information about drink (glass type, ingredients, instructions)
+                const url = new URL(drinkApp.baseUrl + drinkApp.drinkDetails);
+                url.search = new URLSearchParams({ i: id })
+                const response = await fetch(url)
+                    .then((promise) => promise.json())
+                    .then((data) => data.drinks[0])
+
+                if (response.strInstructions) {
+                    drinkApp.populateInstructions(response.strInstructions)
+                    drinkApp.populateIngredients(response);
+                    document.querySelector('#drinkHeader').innerHTML = `<h2>${response.strDrink}</h2>`
+                    document.querySelector('title').innerHTML = `Drink O'Clock - ${response.strDrink}`
+                    break;
+                }
+            }
+        } catch (e) {
+            console.error(e);
         }
     }
 };
@@ -54,11 +57,7 @@ drinkApp.select = function () {
         // saves user choice from dropdown list
         const drink = document.querySelector('#alcoholType').value;
         // checks to see if user has made a selection before making fetch request
-        if (drink) {
-            drinkApp.selectDrink(drink);
-        } else {
-            alert('pick something');
-        }
+        (drink ? drinkApp.selectDrink(drink) : alert('Please select an alcohol type'))
     })
 }
 
@@ -73,7 +72,7 @@ drinkApp.random = function () {
 // this inserts the instructions from the API into the HTML element
 drinkApp.populateInstructions = (inst) => {
     // clears the innerHTML and opens an ordered list
-    drinkApp.instructions.innerHTML = "<ol>";
+    drinkApp.instructions.innerHTML = "<h3>Instructions</h3><ol id='instList'>";
     // checks for end of instructions to ensure there's a period to avoid missing the final instruction
     (inst[inst.length - 1] !== "." ? inst += "." : "")
     // will continue loop until all periods (end of sentences are removed)
@@ -104,7 +103,7 @@ drinkApp.populateInstructions = (inst) => {
             const nextInst = inst.slice(0, (inst.indexOf(".") + 1))
             const restInst = inst.slice(inst.indexOf(".") + 1)
             inst = restInst.trim();
-            drinkApp.instructions.firstElementChild.innerHTML += `
+            drinkApp.instructions.lastElementChild.innerHTML += `
                 <li>${nextInst}</li>
             `
         }
@@ -115,8 +114,8 @@ drinkApp.populateInstructions = (inst) => {
 
 // inserts ingredient list & measurements from API into the HTML element
 drinkApp.populateIngredients = (drink) => {
-    // clears ingredients element and inserts table
-    drinkApp.ingredients.innerHTML = "<table><tbody>"
+    // clears ingredients element
+    drinkApp.ingredients.innerHTML = "<h3>Ingredients</h3><div id='ingList'>"
     // creates a for loop to go through a maximum possible 15 ingredients and list them
     for (i = 1; i < 16; i++) {
         // creates string literals to match the keys for both ingredients and measurements when searching
@@ -125,18 +124,18 @@ drinkApp.populateIngredients = (drink) => {
 
         // checks to see if the current ingredient exists, then inserts them into the table if they are. There are instances of ingredients w/o measurements, so empty space is added instead of showing null
         if (drink[ingVar]) {
-            drinkApp.ingredients.firstElementChild.innerHTML += `
-            <tr>
-                <td>${(!drink[ingMeasVar] ? '' : drink[ingMeasVar])}</td>
-                <td>${drink[ingVar]}</td>                
-            </tr>
+            document.querySelector('#ingList').innerHTML += `
+            <div class="infoContainer">
+                <div class="measurementContainer">${(!drink[ingMeasVar] ? '' : drink[ingMeasVar])}</div>
+                <div class="ingredientContainer">${drink[ingVar]}</div>                
+            </div>
             `
         }
         // if not, breaks the loop to avoid needless iterations
         else break;
     }
-    // when for loop is complete, closes table
-    drinkApp.ingredients.firstElementChild.innerHTML += "</tbody></table>";
+    // when for loop is complete
+    drinkApp.ingredients.innerHTML += "</div";
 }
 
 // app init creates form event listener for submission
