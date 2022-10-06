@@ -1,6 +1,8 @@
+@use "variables" as *;
+
 footer {
     height: 50px;
-    background-color: black;
+    background-color: $mid-grey;
     color: white;
     display: flex;
     align-items: center;

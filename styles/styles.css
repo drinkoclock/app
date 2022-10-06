@@ -166,11 +166,81 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Archivo Black";
+  src: url(../fonts/Archivo_Black/ArchivoBlack-Regular.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Red Hat Display";
+  src: url(../fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf);
+  font-weight: 125 950;
+  font-stretch: 75% 125%;
+  font-style: oblique 0deg 12deg;
+}
+h1 {
+  font-size: 1.8rem;
+  margin-left: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: "Archivo Black";
+  font-size: 3rem;
+  margin: 30px 0 8px 0;
+  padding: 0;
+  color: #ffe600;
+}
+
+h3 {
+  font-family: "Archivo Black";
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+li {
+  padding-bottom: 14px;
+  line-height: 1.2rem;
+  font-weight: 350;
+}
+
+::marker {
+  font-weight: 600;
+  color: #ffe600;
+}
+
+html {
+  font-size: 125%;
+}
+
+header {
+  background-image: url(../assets/Background-1.jpg);
+  height: 70vh;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 100px;
+  font-family: "Archivo Black";
+  color: #232323;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+  background-color: #232323;
+}
+nav img {
+  max-width: 70px;
 }
 
 .wrapper {
@@ -179,40 +249,144 @@ nav {
   margin: auto;
 }
 
+main {
+  background-color: #232323;
+  height: 450px;
+}
+
+.contentContainer {
+  position: relative;
+  top: -200px;
+  background-color: #3b3b3b;
+  max-width: 800px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 40px;
+  -webkit-box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
+          box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
+  color: white;
+  font-family: "Red Hat Display";
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: -300px;
+}
+
 .displayArea {
-  height: 500px;
-  min-height: 50vh;
   width: 100%;
-  background-color: blue;
-  padding: 75px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  position: relative;
+}
+
+#drinkImage {
+  width: 160px;
+  height: 160px;
+  border: 14px solid #232323;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  top: -160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#drinkImage img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#drinkHeader {
+  background-color: #232323;
+  min-height: 100px;
+  width: 100%;
+  margin-top: -40px;
+  border-radius: 40px 40px 0 0;
+}
+
+#drinkGlass {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 6px;
+  padding: 20px 0 24px;
+  margin: 10px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+#drinkGlass img {
+  width: 60px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#drinkGlass img:hover #drinkGlass img:focus {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 #drinkIngredients {
-  height: 250px;
-  width: 500px;
-  background-color: yellow;
+  padding: 20px 20px 20px 40px;
+  width: 400px;
+}
+
+table {
+  display: block;
+  margin-top: 20px;
+  padding: 0 0 0 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
+          box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
+}
+
+tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  display: block;
+  width: 340px;
+  margin: 0 -20px;
+}
+
+tbody:last-child tr {
+  border-bottom: none;
+}
+
+td {
+  text-align: left;
+  padding: 12px 20px 12px 30px;
+  font-weight: 100;
+}
+td:first-child {
+  text-align: right;
+  padding-left: 0;
+  font-weight: 500;
+  width: 110px;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffe600;
 }
 
 #drinkInstructions {
-  height: 250px;
-  width: 400px;
-  background-color: orange;
-}
-
-.bottomArea {
-  height: 300px;
-  min-height: 35vh;
-  background-color: red;
+  padding: 20px 40px 20px 20px;
+  width: 50%;
+  text-align: left;
 }
 
 footer {
   height: 50px;
-  background-color: black;
+  background-color: #3b3b3b;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -230,10 +404,58 @@ footer span {
 }
 
 form {
-  position: relative;
-  top: -100px;
-  background-color: white;
-  height: 200px;
+  margin-bottom: 40px;
+}
+
+label {
+  font-weight: 400;
+}
+
+select {
+  display: block;
   width: 80%;
-  margin: auto;
+  margin: 8px auto 40px;
+  font-weight: 500;
+  color: #232323;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #232323;
+}
+select option {
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.buttonContainer {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+button {
+  font-weight: 900;
+  width: 46%;
+  padding: 10px;
+  border-radius: 24px;
+  border: none;
+  color: #232323;
+}
+
+#alcoholTypeBtn {
+  background-color: #ffe600;
+  -webkit-box-shadow: 0 6px 0 #b7981d;
+          box-shadow: 0 6px 0 #b7981d;
+  -webkit-transition: 0.1s all;
+  transition: 0.1s all;
+}
+#alcoholTypeBtn:hover, #alcoholTypeBtn:focus {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 0 0 #b7981d;
+          box-shadow: 0 0 0 #b7981d;
 }

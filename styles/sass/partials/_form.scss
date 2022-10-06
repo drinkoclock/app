@@ -1,8 +1,51 @@
+@use "variables" as *;
+
 form {
-    position: relative;
-    top: -100px;
-    background-color: white;
-    height: 200px;
+    margin-bottom: 40px;
+}
+
+label {
+    font-weight: 400;
+}
+
+select {
+    display: block;
     width: 80%;
-    margin: auto;
+    margin: 8px auto 40px;
+    font-weight: 500;
+    color: $dark-grey;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid $dark-grey;
+    option {
+        font-family: sans-serif;
+        font-weight: 500;
+    }
+}
+
+.buttonContainer {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    font-weight: 900;
+    width: 46%;
+    padding: 10px;
+    border-radius: 24px;
+    border: none;
+    color: $dark-grey;
+
+}
+
+#alcoholTypeBtn {
+    background-color: $accent-yellow;
+    box-shadow: 0 6px 0 $shade-yellow;
+    transition: 0.1s all;
+    &:hover, &:focus {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 $shade-yellow;
+    }
 }

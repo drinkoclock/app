@@ -114,7 +114,7 @@ drinkApp.populateInstructions = (inst) => {
 
 // inserts ingredient list & measurements from API into the HTML element
 drinkApp.populateIngredients = (drink) => {
-    // clears ingredients element and inserts table
+    // clears ingredients element
     drinkApp.ingredients.innerHTML = "<h3>Ingredients</h3><div id='ingList'>"
     // creates a for loop to go through a maximum possible 15 ingredients and list them
     for (i = 1; i < 16; i++) {
@@ -134,7 +134,7 @@ drinkApp.populateIngredients = (drink) => {
         // if not, breaks the loop to avoid needless iterations
         else break;
     }
-    // when for loop is complete, closes table
+    // when for loop is complete
     drinkApp.ingredients.innerHTML += "</div";
 }
 

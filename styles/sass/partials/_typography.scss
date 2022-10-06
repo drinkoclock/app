@@ -1,0 +1,50 @@
+@use "variables" as *;
+
+@font-face {
+    font-family: "Archivo Black";
+    src: url(../fonts/Archivo_Black/ArchivoBlack-Regular.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Red Hat Display";
+    src: url(../fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf);
+    font-weight: 125 950;
+    font-stretch: 75% 125%;
+    font-style: oblique 0deg 12deg;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-left: 10px;
+    color: white;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Archivo Black';
+    font-size: 3rem;
+    margin: 30px 0 8px 0;
+    padding: 0;
+    color: $accent-yellow;
+}
+
+h3 {
+    font-family: 'Archivo Black';
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+li {
+    padding-bottom: 14px;
+    line-height: 1.2rem;
+    font-weight: 350;
+}
+
+::marker {
+    font-weight: 600;
+    color: $accent-yellow;
+}

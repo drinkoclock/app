@@ -1,4 +1,23 @@
+@use "variables" as *;
+
+header {
+    background-image: url(../assets/Background-1.jpg);
+    height: 70vh;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 nav {
     display: flex;
     height: 100px;
+    font-family: 'Archivo Black';
+    color: $dark-grey;
+    align-items: center;
+    padding: 0 20px;
+    background-color: $dark-grey;
+    img {
+        max-width: 70px;
+    }
 }
