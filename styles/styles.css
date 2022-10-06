@@ -343,39 +343,40 @@ main {
   width: 400px;
 }
 
-table {
-  display: block;
+#ingList {
   margin-top: 20px;
-  padding: 0 0 0 20px;
+  padding: 0;
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   -webkit-box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
           box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
 }
 
-tr {
+.infoContainer {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  display: block;
-  width: 340px;
-  margin: 0 -20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-
-tbody:last-child tr {
+.infoContainer:last-child {
   border-bottom: none;
 }
-
-td {
-  text-align: left;
-  padding: 12px 20px 12px 30px;
-  font-weight: 100;
+.infoContainer div {
+  padding: 12px 20px;
 }
-td:first-child {
+
+.measurementContainer {
   text-align: right;
-  padding-left: 0;
-  font-weight: 500;
-  width: 110px;
+  width: 30%;
   border-right: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 500;
   color: #ffe600;
+}
+
+.ingredientContainer {
+  text-align: left;
+  width: 70%;
+  font-weight: 100;
 }
 
 #drinkInstructions {
