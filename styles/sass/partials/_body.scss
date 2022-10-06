@@ -70,11 +70,10 @@ main {
     border-bottom: 1px solid rgba($color: white, $alpha: 0.3);
     img {
         width: 60px;
-        transition: all 0.3s;
-        &:hover &:focus {
-            transform: scale(1.05);
+        transition: all 0.2s;
+        &:hover {
+            transform: rotate(-6deg) scale(1.1);
         }
-
     }
 }
 
