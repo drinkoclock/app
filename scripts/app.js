@@ -16,27 +16,30 @@ const drinkApp = {
             drinkApp.url = new URL(drinkApp.baseUrl + drinkApp.findDrink);
             drinkApp.url.search = new URLSearchParams({ i: alcType })
         }
-        // will keep running until it returns a drink with English instructions (not all drinks in the API have English instructions)
-        while (1 > 0) {
-            const id = await fetch(drinkApp.url)
-                .then((promise) => promise.json())
-                .then((data) => data.drinks[randNum(data.drinks)].idDrink)
-                .catch((e) => console.log("error: ", e))
+        try {
+            // will keep running until it returns a drink with English instructions (not all drinks in the API have English instructions)
+            while (1 > 0) {
+                const id = await fetch(drinkApp.url)
+                    .then((promise) => promise.json())
+                    .then((data) => data.drinks[randNum(data.drinks)].idDrink)
 
-            // next call obtains further information about drink (glass type, ingredients, instructions)
-            const url = new URL(drinkApp.baseUrl + drinkApp.drinkDetails);
-            url.search = new URLSearchParams({ i: id })
-            const response = await fetch(url)
-                .then((promise) => promise.json())
-                .then((data) => data.drinks[0])
-                .catch((e) => console.log("error: ", e))
-            if (response.strInstructions) {
-                drinkApp.populateInstructions(response.strInstructions)
-                drinkApp.populateIngredients(response);
-                document.querySelector('#drinkHeader').innerHTML = `<h2>${response.strDrink}</h2>`
-                document.querySelector('title').innerHTML = `Drink O'Clock - ${response.strDrink}`
-                break;
+                // next call obtains further information about drink (glass type, ingredients, instructions)
+                const url = new URL(drinkApp.baseUrl + drinkApp.drinkDetails);
+                url.search = new URLSearchParams({ i: id })
+                const response = await fetch(url)
+                    .then((promise) => promise.json())
+                    .then((data) => data.drinks[0])
+
+                if (response.strInstructions) {
+                    drinkApp.populateInstructions(response.strInstructions)
+                    drinkApp.populateIngredients(response);
+                    document.querySelector('#drinkHeader').innerHTML = `<h2>${response.strDrink}</h2>`
+                    document.querySelector('title').innerHTML = `Drink O'Clock - ${response.strDrink}`
+                    break;
+                }
             }
+        } catch (e) {
+            console.error(e);
         }
     }
 };
