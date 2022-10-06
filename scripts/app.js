@@ -11,12 +11,12 @@ const drinkApp = {
 
     // function that uses URL & search to take user input (alcohol type) to return a random drink ID from list containing that alcohol, before passing to another function (now also includes a check for random)
     selectDrink: async (alcType) => {
-        if (alcType === "random") drinkApp.url = new URL(drinkApp.baseUrl + drinkApp.randomDrink);
-        else {
-            drinkApp.url = new URL(drinkApp.baseUrl + drinkApp.findDrink);
-            drinkApp.url.search = new URLSearchParams({ i: alcType })
-        }
         try {
+            if (alcType === "random") drinkApp.url = new URL(drinkApp.baseUrl + drinkApp.randomDrink);
+            else {
+                drinkApp.url = new URL(drinkApp.baseUrl + drinkApp.findDrink);
+                drinkApp.url.search = new URLSearchParams({ i: alcType })
+            }
             // will keep running until it returns a drink with English instructions (not all drinks in the API have English instructions)
             while (1 > 0) {
                 const id = await fetch(drinkApp.url)
@@ -115,7 +115,7 @@ drinkApp.populateInstructions = (inst) => {
 // inserts ingredient list & measurements from API into the HTML element
 drinkApp.populateIngredients = (drink) => {
     // clears ingredients element and inserts table
-    drinkApp.ingredients.innerHTML = "<h3>Ingredients</h3><table><tbody id='ingList'>"
+    drinkApp.ingredients.innerHTML = "<h3>Ingredients</h3><div id='ingList'>"
     // creates a for loop to go through a maximum possible 15 ingredients and list them
     for (i = 1; i < 16; i++) {
         // creates string literals to match the keys for both ingredients and measurements when searching
@@ -125,17 +125,17 @@ drinkApp.populateIngredients = (drink) => {
         // checks to see if the current ingredient exists, then inserts them into the table if they are. There are instances of ingredients w/o measurements, so empty space is added instead of showing null
         if (drink[ingVar]) {
             document.querySelector('#ingList').innerHTML += `
-            <tr>
-                <td>${(!drink[ingMeasVar] ? '' : drink[ingMeasVar])}</td>
-                <td>${drink[ingVar]}</td>                
-            </tr>
+            <div class="infoContainer">
+                <div class="measurementContainer">${(!drink[ingMeasVar] ? '' : drink[ingMeasVar])}</div>
+                <div class="ingredientContainer">${drink[ingVar]}</div>                
+            </div>
             `
         }
         // if not, breaks the loop to avoid needless iterations
         else break;
     }
     // when for loop is complete, closes table
-    drinkApp.ingredients.innerHTML += "</tbody></table";
+    drinkApp.ingredients.innerHTML += "</div";
 }
 
 // app init creates form event listener for submission
