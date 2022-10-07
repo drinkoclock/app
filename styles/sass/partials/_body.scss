@@ -33,6 +33,7 @@ main {
     flex-flow: row wrap;
     justify-content: space-around;
     position: relative;
+    display: none;
 }
 
 #drinkImage {
@@ -134,4 +135,8 @@ main {
         transform: translateY(4px);
         box-shadow: 0 0 0 $shade-yellow;
     }
+}
+
+.hidden {
+    display: none !important;
 }

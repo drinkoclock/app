@@ -283,6 +283,7 @@ main {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   position: relative;
+  display: none;
 }
 
 #drinkImage {
@@ -404,6 +405,10 @@ main {
           box-shadow: 0 0 0 #b7981d;
 }
 
+.hidden {
+  display: none !important;
+}
+
 footer {
   height: 50px;
   background-color: #3b3b3b;
@@ -424,8 +429,9 @@ footer span {
 }
 
 form {
-  margin-bottom: 40px;
+  margin-bottom: 14px;
   margin-top: 20px;
+  padding: 20px 0;
 }
 
 label {
@@ -453,6 +459,10 @@ select option {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -520,4 +530,36 @@ button {
   100% {
     background-position: 0% 50%;
   }
+}
+.takeMeBackContainer {
+  width: 100%;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#takeMeBack {
+  background: transparent;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 5px 0;
+  color: #ffe600;
+  font-weight: 400;
+}
+#takeMeBack:hover, #takeMeBack:focus {
+  -webkit-text-decoration: underline solid #ffe600 1px;
+          text-decoration: underline solid #ffe600 1px;
+}
+
+span.material-icons {
+  color: #ffe600;
+  position: relative;
+  top: 5px;
 }

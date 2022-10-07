@@ -1,8 +1,9 @@
 @use "variables" as *;
 
 form {
-    margin-bottom: 40px;
+    margin-bottom: 14px;
     margin-top: 20px;
+    padding: 20px 0;
 }
 
 label {
@@ -29,6 +30,7 @@ select {
     width: 80%;
     margin: 0 auto;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
 }
 
@@ -74,4 +76,30 @@ button {
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+.takeMeBackContainer {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#takeMeBack {
+    background: transparent;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 5px 0;
+    color: $accent-yellow;
+    font-weight: 400;
+    &:hover, &:focus {
+        text-decoration: underline solid $accent-yellow 1px;
+    }
+}
+
+span.material-icons {
+    color: $accent-yellow;
+    position: relative;
+    top: 5px;
 }
