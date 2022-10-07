@@ -33,7 +33,6 @@ main {
     flex-flow: row wrap;
     justify-content: space-around;
     position: relative;
-    display: none;
 }
 
 #drinkImage {
@@ -120,4 +119,19 @@ main {
     padding: 20px 40px 20px 20px;
     width: 50%;
     text-align: left;
+}
+
+.drinkAgain {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#drinkAgainBtn {
+    background-color: $accent-yellow;
+    box-shadow: 0 4px 0 $shade-yellow;
+    transition: 0.1s all;
+    &:hover, &:focus {
+        transform: translateY(4px);
+        box-shadow: 0 0 0 $shade-yellow;
+    }
 }
