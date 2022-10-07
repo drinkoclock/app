@@ -3,8 +3,9 @@ const drinkApp = {
     // identifies form & dropdown items to track submission
     instructions: document.getElementById('drinkInstructions'),
     ingredients: document.getElementById('drinkIngredients'),
-    menuSlide: document.querySelector('#menuSlide'),
-    infoSlide: document.querySelector('#infoSlide'),
+    backContainer: document.querySelector('.takeMeBackContainer'),
+    formSlide: document.querySelector('#formSlide'),
+    drinkSlide: document.querySelector('#drinkSlide'),
     // API URL and extensions used to find 
     baseUrl: 'https://www.thecocktaildb.com/api/json/v1/1/',
     findDrink: 'filter.php',
@@ -37,7 +38,7 @@ const drinkApp = {
                     drinkApp.populateIngredients(response);
                     drinkApp.toggleActive();
                     document.querySelector('#drinkHeader').innerHTML = `<h2>${response.strDrink}</h2>`
-                    document.querySelector('title').innerHTML = `Drink O'Clock - ${response.strDrink}`               
+                    document.querySelector('title').innerHTML = `Drink O'Clock - ${response.strDrink}`
                     break;
                 }
             }
@@ -48,9 +49,9 @@ const drinkApp = {
 };
 
 // toggles classes on / off depending on state 
-drinkApp.toggleActive = function() {
-    drinkApp.menuSlide.classList.toggle('inactiveMenu');
-    drinkApp.infoSlide.classList.toggle('inactiveDrink')
+drinkApp.toggleActive = function () {
+    drinkApp.formSlide.classList.toggle('inactiveForm');
+    drinkApp.drinkSlide.classList.toggle('inactiveDrink')
 }
 
 // accepts an array, checks length, and returns a random number within range
@@ -75,6 +76,21 @@ drinkApp.random = function () {
     document.querySelector('#alcoholRandom').addEventListener('click', function (e) {
         e.preventDefault();
         drinkApp.selectDrink('random');
+    })
+}
+
+drinkApp.drinkAgain = function () {
+    document.querySelector('#drinkAgainBtn').addEventListener('click', function () {
+        
+        drinkApp.backContainer.classList.remove('hidden');
+        drinkApp.toggleActive();
+    })
+}
+
+drinkApp.takeMeBack = function () {
+    document.querySelector('#takeMeBack').addEventListener('click', function (e) {
+        e.preventDefault();
+        drinkApp.toggleActive();
     })
 }
 
@@ -146,6 +162,8 @@ drinkApp.populateIngredients = (drink) => {
 drinkApp.init = () => {
     drinkApp.select();
     drinkApp.random();
+    drinkApp.drinkAgain();
+    drinkApp.takeMeBack();
 }
 
 // calls init method on page initialization

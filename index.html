@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Drink O'Clock</title>
 </head>
 
 <body>
-    
+
     <div class="wrapper">
-        
+
         <header>
             <div class="wrapper">
                 <nav>
@@ -23,64 +22,69 @@
                 </nav>
             </div>
         </header>
-        
+
         <main>
 
-            <div class="contentContainer">
-
-                <form action="">
-                    <label for="alcoholType">Choose an alcohol:</label>
-                    <select name="alcoholType" id="alcoholType">
-                        <option style="display: none" value="">Choose your alcohol</option>
-                        <option value="gin">Gin</option>
-                        <option value="vodka">Vodka</option>
-                        <option value="whiskey">Whiskey</option>
-                        <option value="tequila">Tequila</option>
-                        <option value="rum">Rum</option>
-                        <option value="bourbon">Bourbon</option>
-                        <option value="coffee liqueur">Coffee Liqueur</option>
-                        <option value="yoghurt">Yoghurt</option>
-                    </select>
-                    <div class="buttonContainer">
-                        <button id="alcoholTypeBtn">Go!</button>
-                        <button id="alcoholRandom">Choose for me</button>
-                        <div class="takeMeBackContainer hidden">
-                            <button id="takeMeBack">Take me back to my last drink!
-                                <span class="material-icons">arrow_forward_ios</span>
-                            </button>
+            <div class="sliderContainer">
+                <div class="slider">
+                    <div id="formSlide">
+                        <div class="contentContainer">
+                            <form action="">
+                                <label for="alcoholType">Choose an alcohol:</label>
+                                <select name="alcoholType" id="alcoholType">
+                                    <option style="display: none" value="">Choose your alcohol</option>
+                                    <option value="gin">Gin</option>
+                                    <option value="vodka">Vodka</option>
+                                    <option value="whiskey">Whiskey</option>
+                                    <option value="tequila">Tequila</option>
+                                    <option value="rum">Rum</option>
+                                    <option value="bourbon">Bourbon</option>
+                                    <option value="coffee liqueur">Coffee Liqueur</option>
+                                    <option value="yoghurt">Yoghurt</option>
+                                </select>
+                                <div class="buttonContainer">
+                                    <button id="alcoholTypeBtn">Go!</button>
+                                    <button id="alcoholRandom">Choose for me</button>
+                                    <div class="takeMeBackContainer hidden">
+                                        <button id="takeMeBack">Take me back to my last drink!
+                                            <span class="material-icons">arrow_forward_ios</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </form>
+                    <div id="drinkSlide" class="inactiveDrink">
+                        <div class="contentContainer">
+                            <section class="displayArea">
+                                <div id="drinkImage">
+                                    <img src="./assets/pexels-arina-krasnikova-7377009.jpg" alt="">
+                                </div>
 
-                <section class="displayArea">
+                                <div id="drinkHeader">
+                                    <h2>Casino Royale</h2>
+                                </div>
 
-                    <div id="drinkImage">
-                        <img src="./assets/pexels-arina-krasnikova-7377009.jpg" alt="">
+                                <div id="drinkGlass">
+                                    <img src="./assets/sour-glass.svg" alt="">
+                                    <p>Sour Glass</p>
+                                </div>
+
+                                <div id="drinkIngredients"></div>
+
+                                <div id="drinkInstructions"></div>
+
+                                <div class="drinkAgain">
+                                    <button id="drinkAgainBtn">Choose another drink</button>
+                                </div>
+                            </section>
+                        </div>
                     </div>
-
-                    <div id="drinkHeader">
-                        <h2>Casino Royale</h2>
-                    </div>
-
-                    <div id="drinkGlass">
-                        <img src="./assets/sour-glass.svg" alt="">
-                        <p>Sour Glass</p>
-                    </div>
-
-                    <div id="drinkIngredients"></div>
-
-                    <div id="drinkInstructions"></div>
-
-                    <div class="drinkAgain">
-                        <button id="drinkAgainBtn">Choose another drink</button>
-                    </div>
-
-                </section> <!-- end of .displayArea section -->
-
-            </div> <!-- end of .contentContainer div -->
+                </div>
+            </div>
 
         </main>
-        
+
         <footer>
             <span>Created by Joel Nash & Karl Lu at Juno College 2022</span>
         </footer>

@@ -1,14 +1,5 @@
 @use "variables" as *;
 
-header {
-    background-image: url(../assets/Background-1.jpg);
-    height: 70vh;
-    width: 100%;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
 nav {
     display: flex;
     height: 100px;
