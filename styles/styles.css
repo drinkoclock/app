@@ -283,6 +283,7 @@ main {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   position: relative;
+  display: none;
 }
 
 #drinkImage {
@@ -406,6 +407,7 @@ footer span {
 
 form {
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 
 label {
@@ -449,8 +451,8 @@ button {
 
 #alcoholTypeBtn {
   background-color: #ffe600;
-  -webkit-box-shadow: 0 6px 0 #b7981d;
-          box-shadow: 0 6px 0 #b7981d;
+  -webkit-box-shadow: 0 4px 0 #b7981d;
+          box-shadow: 0 4px 0 #b7981d;
   -webkit-transition: 0.1s all;
   transition: 0.1s all;
 }
@@ -459,4 +461,45 @@ button {
           transform: translateY(4px);
   -webkit-box-shadow: 0 0 0 #b7981d;
           box-shadow: 0 0 0 #b7981d;
+}
+
+#alcoholRandom {
+  background: linear-gradient(-45deg, #fcb150, #ec679a, #65c4e7, #50e9c5);
+  background-size: 400% 400%;
+  -webkit-box-shadow: 0 4px 0 #7e495d;
+          box-shadow: 0 4px 0 #7e495d;
+  -webkit-transition: 0.1s all;
+  transition: 0.1s all;
+  -webkit-animation: gradientBackground 12s ease infinite;
+          animation: gradientBackground 12s ease infinite;
+}
+#alcoholRandom:hover, #alcoholRandom:focus {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 0 0 #7e495d;
+          box-shadow: 0 0 0 #7e495d;
+}
+
+@-webkit-keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

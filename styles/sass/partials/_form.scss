@@ -2,9 +2,11 @@
 
 form {
     margin-bottom: 40px;
+    margin-top: 20px;
 }
 
 label {
+
     font-weight: 400;
 }
 
@@ -42,10 +44,34 @@ button {
 
 #alcoholTypeBtn {
     background-color: $accent-yellow;
-    box-shadow: 0 6px 0 $shade-yellow;
+    box-shadow: 0 4px 0 $shade-yellow;
     transition: 0.1s all;
     &:hover, &:focus {
-    transform: translateY(4px);
-    box-shadow: 0 0 0 $shade-yellow;
+        transform: translateY(4px);
+        box-shadow: 0 0 0 $shade-yellow;
     }
+}
+
+#alcoholRandom {
+    background: linear-gradient(-45deg, #fcb150, #ec679a, #65c4e7, #50e9c5);
+	background-size: 400% 400%;
+    box-shadow: 0 4px 0 #7e495d;
+    transition: 0.1s all;
+	animation: gradientBackground 12s ease infinite;
+    &:hover, &:focus {
+        transform: translateY(4px);
+        box-shadow: 0 0 0 #7e495d;
+    }
+}
+
+@keyframes gradientBackground {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
