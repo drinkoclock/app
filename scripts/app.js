@@ -3,6 +3,8 @@ const drinkApp = {
     // identifies form & dropdown items to track submission
     instructions: document.getElementById('drinkInstructions'),
     ingredients: document.getElementById('drinkIngredients'),
+    menuSlide: document.querySelector('#menuSlide'),
+    infoSlide: document.querySelector('#infoSlide'),
     // API URL and extensions used to find 
     baseUrl: 'https://www.thecocktaildb.com/api/json/v1/1/',
     findDrink: 'filter.php',
@@ -33,8 +35,9 @@ const drinkApp = {
                 if (response.strInstructions) {
                     drinkApp.populateInstructions(response.strInstructions)
                     drinkApp.populateIngredients(response);
+                    drinkApp.toggleActive();
                     document.querySelector('#drinkHeader').innerHTML = `<h2>${response.strDrink}</h2>`
-                    document.querySelector('title').innerHTML = `Drink O'Clock - ${response.strDrink}`
+                    document.querySelector('title').innerHTML = `Drink O'Clock - ${response.strDrink}`               
                     break;
                 }
             }
@@ -43,6 +46,12 @@ const drinkApp = {
         }
     }
 };
+
+// toggles classes on / off depending on state 
+drinkApp.toggleActive = function() {
+    drinkApp.menuSlide.classList.toggle('inactiveMenu');
+    drinkApp.infoSlide.classList.toggle('inactiveDrink')
+}
 
 // accepts an array, checks length, and returns a random number within range
 function randNum(array) {
@@ -78,31 +87,26 @@ drinkApp.populateInstructions = (inst) => {
     // will continue loop until all periods (end of sentences are removed)
     while (inst.indexOf('.') !== -1) {
         // this extracts specific characters of the string to check for issues
-        const checkForStep = inst.slice(0, 4).toLowerCase()
         const checkForOz = inst.slice(inst.indexOf('.') - 2, inst.indexOf('.')).toLowerCase()
-
+        // checks to see if instructions uses numeric listing already (num = [0], '.' = [1])
+        if (parseInt(inst[0])) inst = inst.slice(2).trim();
         // series of checks to ensure proper formatting
         // first checks if the first four characters are 'step', if so, removes the first 6 characters (ie. step x)
-        if (checkForStep === "step") {
-            const restInst = inst.slice(6)
-            inst = restInst.trim();
+        if (inst.slice(0, 4).toLowerCase() === "step") {
+            inst = inst.slice(6).trim();
         }
         // this removes the period from the end of 'oz.' to avoid incorrect formatting
         else if (checkForOz === "oz") {
-            const firstPart = inst.slice(0, inst.indexOf('.'));
-            const secondPart = inst.slice(inst.indexOf(".") + 1);
-            inst = firstPart + secondPart;
+            inst = inst.slice(0, inst.indexOf('.')) + inst.slice(inst.indexOf('.') + 1);
         }
-        // checks to see if instructions uses numeric listing already (num = [0], '.' = [1]), and removes the number and period AS WELL AS checks for ellipses
-        else if (inst.indexOf(".") === 0 || inst.indexOf(".") === 1) {
-            const restInst = inst.slice(inst.indexOf(".") + 1)
-            inst = restInst.trim();
+        // removes the number and period AS WELL AS checks for ellipses
+        else if (inst.indexOf(".") === 0) {
+            inst = inst.slice(inst.indexOf(".") + 1).trim();
         }
         // this outputs the instruction step
         else {
-            const nextInst = inst.slice(0, (inst.indexOf(".") + 1))
-            const restInst = inst.slice(inst.indexOf(".") + 1)
-            inst = restInst.trim();
+            const nextInst = inst[0].toUpperCase() + inst.slice(1, (inst.indexOf(".")))
+            inst = inst.trim().slice(inst.indexOf(".") + 1).trim();
             drinkApp.instructions.lastElementChild.innerHTML += `
                 <li>${nextInst}</li>
             `
