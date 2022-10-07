@@ -6,6 +6,8 @@ const drinkApp = {
     backContainer: document.querySelector('.takeMeBackContainer'),
     formSlide: document.querySelector('#formSlide'),
     drinkSlide: document.querySelector('#drinkSlide'),
+    drinkImage: document.querySelector('#drinkImage'),
+    drinkGlass: document.querySelector('#drinkGlass'),
     // API URL and extensions used to find 
     baseUrl: 'https://www.thecocktaildb.com/api/json/v1/1/',
     findDrink: 'filter.php',
@@ -32,11 +34,13 @@ const drinkApp = {
                 const response = await fetch(url)
                     .then((promise) => promise.json())
                     .then((data) => data.drinks[0])
-
+                console.log(response);
                 if (response.strInstructions) {
-                    drinkApp.populateInstructions(response.strInstructions)
+                    drinkApp.populateInstructions(response.strInstructions);
                     drinkApp.populateIngredients(response);
                     drinkApp.toggleActive();
+                    drinkApp.drinkImage.innerHTML = `<img src="${response.strDrinkThumb}" alt="${response.strDrink}" >`;
+                    drinkApp.drinkGlass.lastElementChild.innerHTML = `${response.strGlass}`;
                     document.querySelector('#drinkHeader').innerHTML = `<h2>${response.strDrink}</h2>`
                     document.querySelector('title').innerHTML = `Drink O'Clock - ${response.strDrink}`
                     break;
@@ -79,14 +83,15 @@ drinkApp.random = function () {
     })
 }
 
+// button that slides menu back and drink out to make a new selection
 drinkApp.drinkAgain = function () {
     document.querySelector('#drinkAgainBtn').addEventListener('click', function () {
-        
         drinkApp.backContainer.classList.remove('hidden');
         drinkApp.toggleActive();
     })
 }
 
+// button that shows up only after a drink has been returned, allowing user to return to drink if they change their mind about grabbing a new drink
 drinkApp.takeMeBack = function () {
     document.querySelector('#takeMeBack').addEventListener('click', function (e) {
         e.preventDefault();
@@ -95,7 +100,7 @@ drinkApp.takeMeBack = function () {
 }
 
 // this inserts the instructions from the API into the HTML element
-drinkApp.populateInstructions = (inst) => {
+drinkApp.populateInstructions = (inst) => {    
     // clears the innerHTML and opens an ordered list
     drinkApp.instructions.innerHTML = "<h3>Instructions</h3><ol id='instList'>";
     // checks for end of instructions to ensure there's a period to avoid missing the final instruction
