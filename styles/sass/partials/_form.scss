@@ -1,10 +1,13 @@
 @use "variables" as *;
 
 form {
-    margin-bottom: 40px;
+    margin-bottom: 14px;
+    margin-top: 20px;
+    padding: 20px 0;
 }
 
 label {
+
     font-weight: 400;
 }
 
@@ -27,6 +30,7 @@ select {
     width: 80%;
     margin: 0 auto;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
 }
 
@@ -42,10 +46,60 @@ button {
 
 #alcoholTypeBtn {
     background-color: $accent-yellow;
-    box-shadow: 0 6px 0 $shade-yellow;
+    box-shadow: 0 4px 0 $shade-yellow;
     transition: 0.1s all;
     &:hover, &:focus {
-    transform: translateY(4px);
-    box-shadow: 0 0 0 $shade-yellow;
+        transform: translateY(4px);
+        box-shadow: 0 0 0 $shade-yellow;
     }
+}
+
+#alcoholRandom {
+    background: linear-gradient(-45deg, #fcb150, #ec679a, #65c4e7, #50e9c5);
+	background-size: 400% 400%;
+    box-shadow: 0 4px 0 #7e495d;
+    transition: 0.1s all;
+	animation: gradientBackground 12s ease infinite;
+    &:hover, &:focus {
+        transform: translateY(4px);
+        box-shadow: 0 0 0 #7e495d;
+    }
+}
+
+@keyframes gradientBackground {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.takeMeBackContainer {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#takeMeBack {
+    background: transparent;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 5px 0;
+    color: $accent-yellow;
+    font-weight: 400;
+    &:hover, &:focus {
+        text-decoration: underline solid $accent-yellow 1px;
+    }
+}
+
+span.material-icons {
+    color: $accent-yellow;
+    position: relative;
+    top: 5px;
 }

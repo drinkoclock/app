@@ -33,6 +33,7 @@ main {
     flex-flow: row wrap;
     justify-content: space-around;
     position: relative;
+    display: none;
 }
 
 #drinkImage {
@@ -70,11 +71,10 @@ main {
     border-bottom: 1px solid rgba($color: white, $alpha: 0.3);
     img {
         width: 60px;
-        transition: all 0.3s;
-        &:hover &:focus {
-            transform: scale(1.05);
+        transition: all 0.2s;
+        &:hover {
+            transform: rotate(-6deg) scale(1.1);
         }
-
     }
 }
 
@@ -83,42 +83,60 @@ main {
     width: 400px;
 }
 
-table {
-    display: block;
+#ingList {
     margin-top: 20px;
-    padding: 0 0 0 20px;
+    padding: 0;
     background-color: rgba($color: white, $alpha: 0.05);
     border-radius: 20px;
     box-shadow: 0 0 30px rgba($color: $dark-grey, $alpha: 0.6);
 }
 
-tr {
+.infoContainer {
     border-bottom: 1px solid rgba($color: white, $alpha: 0.3);
-    display: block;
-    width: 340px;
-    margin: 0 -20px;
-}
-
-tbody:last-child tr {
-    border-bottom: none;
-}
-
-td {
-    text-align: left;
-    padding: 12px 20px 12px 30px;
-    font-weight: 100;
-    &:first-child {
-        text-align: right;
-        padding-left: 0;
-        font-weight: 500;
-        width: 110px;
-        border-right: 1px solid rgba($color: white, $alpha: 0.3);
-        color: $accent-yellow;
+    display: flex;
+    &:last-child {
+        border-bottom: none;
     }
+    div {
+        padding: 12px 20px;
+    }
+}
+
+.measurementContainer {
+    text-align: right;
+    width: 30%;
+    border-right: 1px solid rgba($color: white, $alpha: 0.3);
+    font-weight: 500;
+    color: $accent-yellow;
+}
+
+.ingredientContainer {
+    text-align: left;
+    width: 70%;
+    font-weight: 100;
 }
 
 #drinkInstructions {
     padding: 20px 40px 20px 20px;
     width: 50%;
     text-align: left;
+}
+
+.drinkAgain {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#drinkAgainBtn {
+    background-color: $accent-yellow;
+    box-shadow: 0 4px 0 $shade-yellow;
+    transition: 0.1s all;
+    &:hover, &:focus {
+        transform: translateY(4px);
+        box-shadow: 0 0 0 $shade-yellow;
+    }
+}
+
+.hidden {
+    display: none !important;
 }

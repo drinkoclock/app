@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <title>Drink O'Clock</title>
 </head>
 
@@ -23,8 +25,10 @@
         </header>
         
         <main>
+
             <div class="contentContainer">
-                <!-- <form action="">
+
+                <form action="">
                     <label for="alcoholType">Choose an alcohol:</label>
                     <select name="alcoholType" id="alcoholType">
                         <option style="display: none" value="">Choose your alcohol</option>
@@ -40,76 +44,51 @@
                     <div class="buttonContainer">
                         <button id="alcoholTypeBtn">Go!</button>
                         <button id="alcoholRandom">Choose for me</button>
+                        <div class="takeMeBackContainer hidden">
+                            <button id="takeMeBack">Take me back to my last drink!
+                                <span class="material-icons">arrow_forward_ios</span>
+                            </button>
+                        </div>
                     </div>
-                </form> -->
+                </form>
+
                 <section class="displayArea">
+
                     <div id="drinkImage">
                         <img src="./assets/pexels-arina-krasnikova-7377009.jpg" alt="">
                     </div>
+
                     <div id="drinkHeader">
                         <h2>Casino Royale</h2>
                     </div>
+
                     <div id="drinkGlass">
                         <img src="./assets/sour-glass.svg" alt="">
                         <p>Sour Glass</p>
                     </div>
-                    <div id="drinkIngredients">
-                        <h3>Ingredients</h3>
-                        <table>
-                            <tbody></tbody>
-                            <tbody>
-                                <tr>
-                                    <td>2 oz </td>
-                                    <td>Gin</td>                
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td>1/2 oz</td>
-                                    <td>Lemon juice</td>                
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td>1 tsp</td>
-                                    <td>Maraschino liqeur</td>                
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td>1 dash</td>
-                                    <td>Orange bitters</td>                
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Egg yolk</td>                
-                                </tr>
-                            </tbody>
-                        </table>
+
+                    <div id="drinkIngredients"></div>
+
+                    <div id="drinkInstructions"></div>
+
+                    <div class="drinkAgain">
+                        <button id="drinkAgainBtn">Choose another drink</button>
                     </div>
-                    <div id="drinkInstructions">
-                        <h3>Instructions</h3>
-                        <ol>
-                            <li>In a shaker half-filled with ice cubes, combine all of the ingredients.</li>
-                        
-                            <li>Put in mouth.</li>
-                        
-                            <li>Repeat as deemed necessary.</li>
-                        </ol>
-                    </div>
-                </section>
-            </div>        
+
+                </section> <!-- end of .displayArea section -->
+
+            </div> <!-- end of .contentContainer div -->
+
         </main>
         
         <footer>
             <span>Created by Joel Nash & Karl Lu at Juno College 2022</span>
         </footer>
 
-    </div>
+    </div> <!-- end of .wrapper div -->
 
     <script src="./scripts/app.js"></script>
+
 </body>
 
 </html>
