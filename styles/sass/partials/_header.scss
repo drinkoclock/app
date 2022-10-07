@@ -6,9 +6,15 @@ nav {
     font-family: 'Archivo Black';
     color: $dark-grey;
     align-items: center;
+    justify-content: space-between;
     padding: 0 20px;
     background-color: $dark-grey;
     img {
         max-width: 70px;
     }
+}
+
+#titleContainer {
+    width:100%;
+    display: flex;
 }
