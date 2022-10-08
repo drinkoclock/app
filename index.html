@@ -16,10 +16,10 @@
 
         <header>
             <div class="wrapper">
-                <nav>
+                <nav class="themed darkMode">
                     <div id="titleContainer">
                         <img src="./assets/drink-oclock-logo.svg" alt="Drink O'Clock Logo">
-                        <h1>Drink O'Clock</h1>
+                        <h1 class="themed darkMode">Drink O'Clock</h1>
                     </div>
 
                     <div class="switch">
@@ -37,10 +37,10 @@
             <div class="sliderContainer">
                 <div class="slider">
                     <div id="formSlide">
-                        <div class="contentContainer">
+                        <div class="contentContainer content themed darkModeContent">
                             <form action="">
-                                <label for="alcoholType">Choose an alcohol:</label>
-                                <select name="alcoholType" id="alcoholType">
+                                <label for="alcoholType" class="themed content darkModeContent">Choose an alcohol:</label>
+                                <select name="alcoholType" id="alcoholType" class="themed darkMode">
                                     <option style="display: none" value="">Choose your alcohol</option>
                                     <option value="gin">Gin</option>
                                     <option value="vodka">Vodka</option>
@@ -55,8 +55,8 @@
                                     <button id="alcoholTypeBtn">Go!</button>
                                     <button id="alcoholRandom">Choose for me</button>
                                     <div class="takeMeBackContainer hidden">
-                                        <button id="takeMeBack">Take me back to my last drink!
-                                            <span class="material-icons">arrow_forward_ios</span>
+                                        <button id="takeMeBack" class="themed text darkModeText">Take me back to my last drink!
+                                            <span class="material-icons themed text darkModeText">arrow_forward_ios</span>
                                         </button>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div id="drinkSlide" class="inactiveDrink">
-                        <div class="contentContainer">
+                        <div class="contentContainer content themed darkModeContent">
                             <section class="displayArea">
                                 <div id="drinkImage">
                                     <img src="./assets/pexels-arina-krasnikova-7377009.jpg" alt="">
@@ -94,14 +94,13 @@
 
         </main>
 
-        <footer>
+        <footer class="themed darkMode">
             <span>Created by Joel Nash & Karl Lu at Juno College 2022</span>
         </footer>
 
     </div> <!-- end of .wrapper div -->
 
     <script src="./scripts/app.js"></script>
-
 </body>
 
 </html>
