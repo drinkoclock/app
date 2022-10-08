@@ -51,7 +51,6 @@ const drinkApp = {
             console.error(e);
         }
     },
-
     // when user selects from dropdown menu, will return a drink based on alcohol type and reset the field (avoids user selecting no value && allows user to choose the same alcohol type multiple times in a row)
     select: () => {
         document.querySelector('#alcoholTypeBtn').addEventListener('click', function (e) {
@@ -68,8 +67,6 @@ const drinkApp = {
         drinkApp.formSlide.classList.toggle('inactiveForm');
         drinkApp.drinkSlide.classList.toggle('inactiveDrink')
     },
-
-
     // on button click, will prevent page refresh and return a random drink
     random: () => {
         document.querySelector('#alcoholRandom').addEventListener('click', function (e) {
@@ -77,7 +74,6 @@ const drinkApp = {
             drinkApp.selectDrink('random');
         })
     },
-
     // button that slides menu back and drink out to make a new selection
     drinkAgain: () => {
         document.querySelector('#drinkAgainBtn').addEventListener('click', function () {
@@ -85,15 +81,13 @@ const drinkApp = {
             drinkApp.toggleActive();
         })
     },
-
     // button that shows up only after a drink has been returned, allowing user to return to drink if they change their mind about grabbing a new drink
     takeMeBack: () => {
         document.querySelector('#takeMeBack').addEventListener('click', function (e) {
             e.preventDefault();
             drinkApp.toggleActive();
         })
-    },
-
+    },    
     // this inserts the instructions from the API into the HTML element
     populateInstructions: (inst) => {
         // clears the innerHTML and opens an ordered list
@@ -131,7 +125,6 @@ const drinkApp = {
         // closes the ordered list
         drinkApp.instructions.innerHTML += "</ol>";
     },
-
     // inserts ingredient list & measurements from API into the HTML element
     populateIngredients: (drink) => {
         // clears ingredients element
@@ -157,7 +150,6 @@ const drinkApp = {
         // when for loop is complete
         drinkApp.ingredients.innerHTML += "</div";
     },
-
     // app init creates form event listener for submission
     init: () => {
         drinkApp.select();
@@ -213,7 +205,9 @@ const darkMode = {
     init: () => {
         darkMode.state = darkMode.isActive();
         // if user left off in light mode will toggle colours to to light mode
-        (darkMode.state === "false" ? darkMode.toggle(false) : '')
+        (darkMode.state === "false" ? darkMode.toggle(false) : '');
+        // sets the checkbox to checked if darkMode is active
+        (darkMode.state === "true" ? document.querySelector('#checkbox').checked = true : '');
         darkMode.button();
     }
 }
