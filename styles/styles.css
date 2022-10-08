@@ -181,7 +181,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 h1 {
   font-size: 1.8rem;
   margin-left: 10px;
-  color: white;
   text-transform: uppercase;
 }
 
@@ -210,12 +209,52 @@ li {
 
 ::marker {
   font-weight: 600;
+}
+
+.darkModeList::marker {
   color: #ffe600;
+}
+
+.lightModeList::marker {
+  color: #1a53ff;
 }
 
 html {
   font-size: 125%;
   overflow: hidden;
+}
+
+.themed {
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.darkMode {
+  background-color: #232323;
+  color: #fff;
+}
+
+.lightMode {
+  background-color: #fff;
+  color: #2b2b2b;
+}
+
+.darkModeContent {
+  background-color: #3b3b3b;
+  color: #fff;
+}
+
+.lightModeContent {
+  background-color: #ddd;
+  color: #2b2b2b;
+}
+
+.darkModeText {
+  color: #ffe600;
+}
+
+.lightModeText {
+  color: #1a53ff;
 }
 
 nav {
@@ -261,14 +300,12 @@ main {
 }
 
 .contentContainer {
-  background-color: #3b3b3b;
   max-width: 1000px;
   width: 80%;
   margin: 0 auto;
   border-radius: 40px;
   -webkit-box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
           box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
-  color: white;
   font-family: "Red Hat Display";
   text-align: center;
   padding: 20px 0;
@@ -373,7 +410,6 @@ main {
   width: 30%;
   border-right: 1px solid rgba(255, 255, 255, 0.3);
   font-weight: 500;
-  color: #ffe600;
 }
 
 .ingredientContainer {
@@ -461,19 +497,17 @@ main {
 }
 
 .inactiveForm {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
 }
 
 .inactiveDrink {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
 }
 
 footer {
   height: 50px;
-  background-color: #3b3b3b;
-  color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -504,7 +538,6 @@ select {
   width: 80%;
   margin: 8px auto 40px;
   font-weight: 500;
-  color: #232323;
   padding: 10px;
   border-radius: 10px;
   border: 2px solid #232323;
@@ -608,19 +641,21 @@ button {
 
 #takeMeBack {
   background: transparent;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin-bottom: 0;
   padding: 5px 0;
-  color: #ffe600;
   font-weight: 400;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 #takeMeBack:hover, #takeMeBack:focus {
-  -webkit-text-decoration: underline solid #ffe600 1px;
-          text-decoration: underline solid #ffe600 1px;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
-span.material-icons {
-  color: #ffe600;
+.material-icons {
   position: relative;
   top: 5px;
 }

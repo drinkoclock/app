@@ -17,7 +17,6 @@
 h1 {
     font-size: 1.8rem;
     margin-left: 10px;
-    color: white;
     text-transform: uppercase;
 }
 
@@ -26,7 +25,7 @@ h2 {
     font-size: 3rem;
     margin: 30px 0 8px 0;
     padding: 0;
-    color: $accent-yellow;
+    color: $accentYellow;
 }
 
 h3 {
@@ -46,5 +45,12 @@ li {
 
 ::marker {
     font-weight: 600;
-    color: $accent-yellow;
+}
+
+.darkModeList::marker{
+    color: $accentYellow;
+}
+
+.lightModeList::marker{
+    color: $accentBlue;
 }

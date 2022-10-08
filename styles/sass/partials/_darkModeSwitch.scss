@@ -38,15 +38,17 @@ input:checked + .darkModeSlider {
   background-color: #2b2b2b;
 }
 
-// when checked moves the toggle inside the switch
+// when checked moves ONLY the toggle inside the switch
 input:checked + .darkModeSlider:before {
   transform: translateX(26px);
 }
 
+// smooths switch container
 .darkModeSlider.round {
   border-radius: 34px;
 }
 
+// turns toggle switch into circle
 .darkModeSlider.round:before {
   border-radius: 50%;
 }

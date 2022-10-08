@@ -16,10 +16,9 @@ select {
     width: 80%;
     margin: 8px auto 40px;
     font-weight: 500;
-    color: $dark-grey;
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid $dark-grey;
+    border: 2px solid $darkGrey;
     option {
         font-family: sans-serif;
         font-weight: 500;
@@ -40,17 +39,17 @@ button {
     padding: 10px;
     border-radius: 24px;
     border: none;
-    color: $dark-grey;
+    color: $darkGrey;
 
 }
 
 #alcoholTypeBtn {
-    background-color: $accent-yellow;
-    box-shadow: 0 4px 0 $shade-yellow;
+    background-color: $accentYellow;
+    box-shadow: 0 4px 0 $shadeYellow;
     transition: 0.1s all;
     &:hover, &:focus {
         transform: translateY(4px);
-        box-shadow: 0 0 0 $shade-yellow;
+        box-shadow: 0 0 0 $shadeYellow;
     }
 }
 
@@ -88,18 +87,17 @@ button {
 
 #takeMeBack {
     background: transparent;
-    width: 100%;
+    width: fit-content;
     margin-bottom: 0;
     padding: 5px 0;
-    color: $accent-yellow;
     font-weight: 400;
+    transition: 0.3s;
     &:hover, &:focus {
-        text-decoration: underline solid $accent-yellow 1px;
+        transform: scale(1.15);
     }
 }
 
-span.material-icons {
-    color: $accent-yellow;
+.material-icons {
     position: relative;
     top: 5px;
 }

@@ -16,20 +16,14 @@ main {
 }
 
 .contentContainer {
-    // position: relative;
-    // top: -200px;
-    background-color: $mid-grey;
     max-width: 1000px;
     width: 80%;
-    // height: 1000px;
     margin: 0 auto;
     border-radius: 40px;
-    box-shadow: 0 0 30px rgba($color: $dark-grey, $alpha: 0.6);
-    color: white;
+    box-shadow: 0 0 30px rgba($color: $darkGrey, $alpha: 0.6);
     font-family: 'Red Hat Display';
     text-align: center;
     padding: 20px 0;
-    // margin-bottom: -300px;
 }
 
 .displayArea {
@@ -43,7 +37,7 @@ main {
 #drinkImage {
     width: 160px;
     height: 160px;
-    border: 14px solid $dark-grey;
+    border: 14px solid $darkGrey;
     overflow: hidden;
     border-radius: 50%;
     position: absolute;
@@ -59,7 +53,7 @@ main {
 }
 
 #drinkHeader {
-    background-color: $dark-grey;
+    background-color: $darkGrey;
     min-height: 100px;
     width: 100%;
     margin-top: -40px;
@@ -95,7 +89,7 @@ main {
     padding: 0;
     background-color: rgba($color: white, $alpha: 0.05);
     border-radius: 20px;
-    box-shadow: 0 0 30px rgba($color: $dark-grey, $alpha: 0.6);
+    box-shadow: 0 0 30px rgba($color: $darkGrey, $alpha: 0.6);
 }
 
 .infoContainer {
@@ -116,7 +110,6 @@ main {
     width: 30%;
     border-right: 1px solid rgba($color: white, $alpha: 0.3);
     font-weight: 500;
-    color: $accent-yellow;
 }
 
 .ingredientContainer {
@@ -137,14 +130,13 @@ main {
 }
 
 #drinkAgainBtn {
-    background-color: $accent-yellow;
-    box-shadow: 0 4px 0 $shade-yellow;
+    background-color: $accentYellow;
+    box-shadow: 0 4px 0 $shadeYellow;
     transition: 0.1s all;
-
     &:hover,
     &:focus {
         transform: translateY(4px);
-        box-shadow: 0 0 0 $shade-yellow;
+        box-shadow: 0 0 0 $shadeYellow;
     }
 }
 
@@ -162,7 +154,6 @@ main {
     max-height: 500px;
     position: relative;
     top: 40vh;
-    // overflow: hidden;
 }
 
 #formSlide,
@@ -184,9 +175,9 @@ main {
 }
 
 .inactiveForm {
-    transform: translateX(-100%);
+    transform: translateX(-150%);
 }
 
 .inactiveDrink {
-    transform: translateX(100%);
+    transform: translateX(150%);
 }
