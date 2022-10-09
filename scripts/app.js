@@ -98,8 +98,8 @@ const drinkApp = {
     },
     // creates a delay to set up a loading animation when requesting new drink data
     loading: () => {
-        drinkApp.loader.classList.toggle('isLoading');
-        setTimeout(function () { loader.classList.toggle('isLoading') }, 2000)
+        drinkApp.loader.classList.toggle('isNotLoading');
+        setTimeout(function () { drinkApp.loader.classList.toggle('isNotLoading') }, 1000)
     },
     // this inserts the instructions from the API into the HTML element
     populateInstructions: (inst) => {
