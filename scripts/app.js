@@ -2,13 +2,14 @@ const defaultVal = "true";
 // initializes the app object
 const drinkApp = {
     // identifies form & dropdown items to track submission
-    instructions: document.getElementById('drinkInstructions'),
-    ingredients: document.getElementById('drinkIngredients'),
+    instructions: document.querySelector('#drinkInstructions'),
+    ingredients: document.querySelector('#drinkIngredients'),
     backContainer: document.querySelector('.takeMeBackContainer'),
     formSlide: document.querySelector('#formSlide'),
     drinkSlide: document.querySelector('#drinkSlide'),
     drinkImage: document.querySelector('#drinkImage'),
     drinkGlass: document.querySelector('#drinkGlass'),
+    loader: document.querySelector('#loaderContainer'),
     // API URL and extensions used to find 
     baseUrl: 'https://www.thecocktaildb.com/api/json/v1/1/',
     findDrink: 'filter.php',
@@ -39,7 +40,7 @@ const drinkApp = {
                 if (response.strInstructions) {
                     drinkApp.populateInstructions(response.strInstructions);
                     drinkApp.populateIngredients(response);
-                    drinkApp.toggleActive();
+                    drinkApp.toggleActive(true);
                     drinkApp.drinkImage.innerHTML = `<img src="${response.strDrinkThumb}" alt="${response.strDrink}" >`;
                     drinkApp.drinkGlass.lastElementChild.innerHTML = `${response.strGlass}`;
                     document.querySelector('#drinkHeader').innerHTML = `<h2>${response.strDrink}</h2>`
@@ -63,9 +64,16 @@ const drinkApp = {
         })
     },
     // toggles classes on / off depending on state 
-    toggleActive: () => {
+    toggleActive: (isNewDrink) => {
         drinkApp.formSlide.classList.toggle('inactiveForm');
-        drinkApp.drinkSlide.classList.toggle('inactiveDrink')
+        // only calls loading animation when it's a new drink request, otherwise instantaneous
+        if (isNewDrink) {
+            drinkApp.loading();
+            setTimeout(function() {drinkApp.drinkSlide.classList.toggle('inactiveDrink')}, 1000);
+        } else {
+            drinkApp.drinkSlide.classList.toggle('inactiveDrink');
+        }
+        
     },
     // on button click, will prevent page refresh and return a random drink
     random: () => {
@@ -87,7 +95,12 @@ const drinkApp = {
             e.preventDefault();
             drinkApp.toggleActive();
         })
-    },    
+    },
+    // creates a delay to set up a loading animation when requesting new drink data
+    loading: () => {
+        drinkApp.loader.classList.toggle('isNotLoading');
+        setTimeout(function () { drinkApp.loader.classList.toggle('isNotLoading') }, 1000)
+    },
     // this inserts the instructions from the API into the HTML element
     populateInstructions: (inst) => {
         // clears the innerHTML and opens an ordered list
@@ -170,7 +183,7 @@ const darkMode = {
             } else if (item.classList.contains('text')) {
                 item.classList.toggle('darkModeText');
                 item.classList.toggle('lightModeText');
-            } else if (item.classList.contains('list')){
+            } else if (item.classList.contains('list')) {
                 item.classList.toggle('darkModeList');
                 item.classList.toggle('lightModeList');
             } else {
