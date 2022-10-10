@@ -178,6 +178,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   font-stretch: 75% 125%;
   font-style: oblique 0deg 12deg;
 }
+html {
+  font-family: "Red Hat Display";
+}
+
 h1 {
   font-size: 1.8rem;
   margin-left: 10px;
@@ -190,6 +194,13 @@ h2 {
   margin: 30px 0 8px 0;
   padding: 0;
   color: #ffe600;
+  text-align: left;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
+}
+
+.lightModeContent h2 {
+  color: #232323;
 }
 
 h3 {
@@ -205,6 +216,7 @@ li {
   padding-bottom: 14px;
   line-height: 1.2rem;
   font-weight: 350;
+  font-size: 0.9rem;
 }
 
 ::marker {
@@ -216,12 +228,12 @@ li {
 }
 
 .lightModeList::marker {
-  color: #1a53ff;
+  color: #232323;
 }
 
 html {
   font-size: 125%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .themed {
@@ -245,7 +257,7 @@ html {
 }
 
 .lightModeContent {
-  background-color: #ddd;
+  background-color: #eee;
   color: #2b2b2b;
 }
 
@@ -254,7 +266,7 @@ html {
 }
 
 .lightModeText {
-  color: #1a53ff;
+  color: #232323;
 }
 
 nav {
@@ -292,11 +304,13 @@ nav img {
 
 main {
   background-image: url(../assets/Background-1.jpg);
-  height: calc(100vh - 150px);
+  min-height: calc(100vh - 150px);
   width: 100%;
+  position: relative;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 40px;
 }
 
 .contentContainer {
@@ -308,7 +322,7 @@ main {
           box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
   font-family: "Red Hat Display";
   text-align: center;
-  padding: 20px 0;
+  padding-bottom: 20px;
 }
 
 .displayArea {
@@ -325,34 +339,45 @@ main {
   position: relative;
 }
 
+.drinkAndImageContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 #drinkImage {
-  width: 160px;
-  height: 160px;
-  border: 14px solid #232323;
+  width: 16%;
   overflow: hidden;
-  border-radius: 50%;
-  position: absolute;
-  top: -160px;
+  border-radius: 40px 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 #drinkImage img {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 #drinkHeader {
   background-color: #232323;
-  min-height: 100px;
   width: 100%;
-  margin-top: -40px;
-  border-radius: 40px 40px 0 0;
+  border-radius: 0 40px 0 0;
+  padding: 20px 40px;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
+}
+
+.lightModeContent #drinkHeader {
+  background: #ffe600;
 }
 
 #drinkGlass {
@@ -364,12 +389,14 @@ main {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 6px;
-  padding: 20px 0 24px;
-  margin: 10px 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  margin: 0 0 20px 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
 }
 #drinkGlass img {
-  width: 60px;
+  width: 40px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -378,9 +405,13 @@ main {
           transform: rotate(-6deg) scale(1.1);
 }
 
+.lightModeContent #drinkGlass {
+  background-color: white;
+}
+
 #drinkIngredients {
   padding: 20px 20px 20px 40px;
-  width: 400px;
+  width: 50%;
 }
 
 #ingList {
@@ -390,6 +421,9 @@ main {
   border-radius: 20px;
   -webkit-box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
           box-shadow: 0 0 30px rgba(35, 35, 35, 0.6);
+  font-size: 0.9rem;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
 }
 
 .infoContainer {
@@ -397,12 +431,14 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
 }
 .infoContainer:last-child {
   border-bottom: none;
 }
 .infoContainer div {
-  padding: 12px 20px;
+  padding: 8px 12px;
 }
 
 .measurementContainer {
@@ -410,12 +446,29 @@ main {
   width: 30%;
   border-right: 1px solid rgba(255, 255, 255, 0.3);
   font-weight: 500;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
 }
 
 .ingredientContainer {
   text-align: left;
   width: 70%;
   font-weight: 100;
+}
+
+.lightModeContent #ingList {
+  -webkit-box-shadow: 0 0 30px rgba(35, 35, 35, 0.1);
+          box-shadow: 0 0 30px rgba(35, 35, 35, 0.1);
+  background-color: white;
+}
+.lightModeContent #ingList .infoContainer {
+  border-bottom: 1px solid #eee;
+}
+.lightModeContent #ingList .infoContainer:last-child {
+  border-bottom: none;
+}
+.lightModeContent #ingList .measurementContainer {
+  border-right: 1px solid #eee;
 }
 
 #drinkInstructions {
@@ -426,7 +479,7 @@ main {
 
 .drinkAgain {
   width: 100%;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 #drinkAgainBtn {
@@ -443,53 +496,18 @@ main {
           box-shadow: 0 0 0 #b7981d;
 }
 
-.sliderContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.slider {
-  width: 100%;
-  max-width: 80%;
-  height: 100%;
-  max-height: 500px;
-  position: relative;
-  top: 40vh;
-}
-
 #formSlide,
 #drinkSlide {
   width: 100%;
-  height: 100%;
-  max-height: 100%;
-  position: absolute;
+  position: relative;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 1.8rem;
+}
+
+#formSlide {
+  position: absolute;
+  top: 20px;
+  left: 0;
 }
 
 .hidden {
@@ -526,7 +544,7 @@ footer span {
 form {
   margin-bottom: 14px;
   margin-top: 20px;
-  padding: 20px 0;
+  padding: 50px 0 20px 0;
 }
 
 label {
@@ -672,7 +690,7 @@ button {
 }
 
 .darkModeSlider {
-  background-color: #ccc;
+  background-color: #232323;
   bottom: 0;
   cursor: pointer;
   left: 0;
@@ -681,18 +699,19 @@ button {
   top: 0;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  border: 2px solid white;
 }
 
 .darkModeSlider:before {
   background-color: #fff;
   bottom: 4px;
   content: "";
-  height: 26px;
+  height: 22px;
   left: 4px;
   position: absolute;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  width: 26px;
+  width: 22px;
 }
 
 input:checked + .darkModeSlider {

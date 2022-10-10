@@ -2,7 +2,7 @@
 
 html {
     font-size: 125%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .themed {
@@ -25,7 +25,7 @@ html {
 }
 
 .lightModeContent {
-    background-color: #ddd;
+    background-color: #eee;
     color: $lightModeText;
 }
 
@@ -34,5 +34,5 @@ html {
 }
 
 .lightModeText {
-    color: $accentBlue;
+    color: $darkGrey;
 }

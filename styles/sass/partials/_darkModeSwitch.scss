@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 .theme-switch {
   display: inline-block;
   height: 34px;
@@ -11,14 +13,15 @@
 
 // creates the switch container
 .darkModeSlider {
-  background-color: #ccc;
+  background-color: $darkGrey;
   bottom: 0;
   cursor: pointer;
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
-  transition: .4s;
+  transition: 0.4s;
+  border: 2px solid white;
 }
 
 // creates the toggle in the switch
@@ -26,11 +29,11 @@
   background-color: #fff;
   bottom: 4px;
   content: "";
-  height: 26px;
+  height: 22px;
   left: 4px;
   position: absolute;
-  transition: .4s;
-  width: 26px;
+  transition: 0.4s;
+  width: 22px;
 }
 
 // when checked changes background to fit w/dark mode
