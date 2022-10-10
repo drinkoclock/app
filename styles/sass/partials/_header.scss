@@ -1,0 +1,20 @@
+@use "variables" as *;
+
+nav {
+    display: flex;
+    height: 100px;
+    font-family: 'Archivo Black';
+    color: $darkGrey;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: $darkGrey;
+    img {
+        max-width: 70px;
+    }
+}
+
+#titleContainer {
+    width:100%;
+    display: flex;
+}

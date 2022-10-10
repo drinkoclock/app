@@ -1,0 +1,200 @@
+@use "variables" as *;
+
+.wrapper {
+    width: 100%;
+    max-width: 1920px;
+    margin: auto;
+}
+
+main {
+    background-image: url(../assets/Background-1.jpg);
+    min-height: calc(100vh - 150px);
+    width: 100%;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 40px;
+}
+
+.contentContainer {
+    max-width: 1000px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 40px;
+    box-shadow: 0 0 30px rgba($color: $darkGrey, $alpha: 0.6);
+    font-family: 'Red Hat Display';
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.displayArea {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    position: relative;
+}
+
+.drinkAndImageContainer {
+    width: 100%;
+    display: flex;
+}
+
+#drinkImage {
+    width: 16%;
+    overflow: hidden;
+    border-radius: 40px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+#drinkHeader {
+    background-color: $darkGrey;
+    width: 100%;
+    border-radius: 0 40px 0 0;
+    padding: 20px 40px;
+    transition: 0.4s all;
+}
+
+.lightModeContent #drinkHeader {
+    background: $accentYellow;
+}
+
+#drinkGlass {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    margin: 0 0 20px 0;
+    background-color: rgba(255,255,255,0.05);
+    transition: 0.4s all;
+
+    img {
+        width: 40px;
+        transition: all 0.2s;
+
+        &:hover {
+            transform: rotate(-6deg) scale(1.1);
+        }
+    }
+}
+
+.lightModeContent #drinkGlass {
+    background-color: white;
+}
+
+#drinkIngredients {
+    padding: 20px 20px 20px 40px;
+    width: 50%;
+}
+
+#ingList {
+    margin-top: 20px;
+    padding: 0;
+    background-color: rgba($color: white, $alpha: 0.05);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba($color: $darkGrey, $alpha: 0.6);
+    font-size: 0.9rem;
+    transition: 0.4s all;
+}
+
+.infoContainer {
+    border-bottom: 1px solid rgba($color: white, $alpha: 0.3);
+    display: flex;
+    transition: 0.4s all;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    div {
+        padding: 8px 12px;
+    }
+}
+
+.measurementContainer {
+    text-align: right;
+    width: 30%;
+    border-right: 1px solid rgba($color: white, $alpha: 0.3);
+    font-weight: 500;
+    transition: 0.4s all;
+}
+
+.ingredientContainer {
+    text-align: left;
+    width: 70%;
+    font-weight: 100;
+}
+
+.lightModeContent #ingList {
+    box-shadow: 0 0 30px rgba(35, 35, 35, 0.1);
+    background-color: white;
+
+    .infoContainer {
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    
+    .measurementContainer {
+        border-right: 1px solid #eee;
+    }
+}
+
+#drinkInstructions {
+    padding: 20px 40px 20px 20px;
+    width: 50%;
+    text-align: left;
+}
+
+.drinkAgain {
+    width: 100%;
+    margin: 20px 0;
+}
+
+#drinkAgainBtn {
+    background-color: $accentYellow;
+    box-shadow: 0 4px 0 $shadeYellow;
+    transition: 0.1s all;
+    &:hover,
+    &:focus {
+        transform: translateY(4px);
+        box-shadow: 0 0 0 $shadeYellow;
+    }
+}
+
+#formSlide,
+#drinkSlide {
+    width: 100%;
+    position: relative;
+    transition: all 0.5s;
+}
+
+#formSlide {
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.inactiveForm {
+    transform: translateX(-150%);
+}
+
+.inactiveDrink {
+    transform: translateX(150%);
+}

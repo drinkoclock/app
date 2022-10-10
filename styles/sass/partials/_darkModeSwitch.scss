@@ -1,0 +1,57 @@
+@use "variables" as *;
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+// creates the switch container
+.darkModeSlider {
+  background-color: $darkGrey;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border: 2px solid white;
+}
+
+// creates the toggle in the switch
+.darkModeSlider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 22px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 22px;
+}
+
+// when checked changes background to fit w/dark mode
+input:checked + .darkModeSlider {
+  background-color: #2b2b2b;
+}
+
+// when checked moves ONLY the toggle inside the switch
+input:checked + .darkModeSlider:before {
+  transform: translateX(26px);
+}
+
+// smooths switch container
+.darkModeSlider.round {
+  border-radius: 34px;
+}
+
+// turns toggle switch into circle
+.darkModeSlider.round:before {
+  border-radius: 50%;
+}

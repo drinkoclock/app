@@ -1,0 +1,38 @@
+@use "variables" as *;
+
+html {
+    font-size: 125%;
+    overflow-x: hidden;
+}
+
+.themed {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.darkMode {
+    background-color: $darkModeBg;
+    color: $darkModeText;
+}
+
+.lightMode {
+    background-color: $lightModeBg;
+    color: $lightModeText;
+}
+
+.darkModeContent {
+    background-color: $midGrey;
+    color: $darkModeText;
+}
+
+.lightModeContent {
+    background-color: #eee;
+    color: $lightModeText;
+}
+
+.darkModeText {
+    color: $accentYellow;
+}
+
+.lightModeText {
+    color: $darkGrey;
+}
