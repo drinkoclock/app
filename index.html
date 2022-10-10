@@ -33,65 +33,60 @@
         </header>
 
         <main>
-
-            <div class="sliderContainer">
-                <div class="slider">
-                    <div id="formSlide">
-                        <div class="contentContainer content themed darkModeContent">
-                            <form action="">
-                                <label for="alcoholType" class="themed content darkModeContent">Choose an alcohol:</label>
-                                <select name="alcoholType" id="alcoholType" class="themed darkMode">
-                                    <option style="display: none" value="">Choose your alcohol</option>
-                                    <option value="gin">Gin</option>
-                                    <option value="vodka">Vodka</option>
-                                    <option value="whiskey">Whiskey</option>
-                                    <option value="tequila">Tequila</option>
-                                    <option value="rum">Rum</option>
-                                    <option value="bourbon">Bourbon</option>
-                                    <option value="coffee liqueur">Coffee Liqueur</option>
-                                    <option value="yoghurt">Yoghurt</option>
-                                </select>
-                                <div class="buttonContainer">
-                                    <button id="alcoholTypeBtn">Go!</button>
-                                    <button id="alcoholRandom">Choose for me</button>
-                                    <div class="takeMeBackContainer hidden">
-                                        <button id="takeMeBack" class="themed text darkModeText">Take me back to my last drink!
-                                            <span class="material-icons themed text darkModeText">arrow_forward_ios</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+            <div id="formSlide">
+                <div class="contentContainer content themed darkModeContent">
+                    <form action="">
+                        <label for="alcoholType" class="themed content darkModeContent">Choose your alcohol:</label>
+                        <select name="alcoholType" id="alcoholType" class="themed darkMode">
+                            <option style="display: none" value="">Choose your alcohol</option>
+                            <option value="gin">Gin</option>
+                            <option value="vodka">Vodka</option>
+                            <option value="whiskey">Whiskey</option>
+                            <option value="tequila">Tequila</option>
+                            <option value="rum">Rum</option>
+                            <option value="bourbon">Bourbon</option>
+                            <option value="coffee liqueur">Coffee Liqueur</option>
+                            <option value="yoghurt">Yoghurt</option>
+                        </select>
+                        <div class="buttonContainer">
+                            <button id="alcoholTypeBtn">Go!</button>
+                            <button id="alcoholRandom">Choose for me</button>
+                            <div class="takeMeBackContainer hidden">
+                                <button id="takeMeBack" class="themed text darkModeText">Take me back to my last drink!
+                                    <span class="material-icons themed text darkModeText">arrow_forward_ios</span>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div id="drinkSlide" class="inactiveDrink">
-                        <div class="contentContainer content themed darkModeContent">
-                            <section class="displayArea">
-                                <div id="drinkImage">
-                                    <img src="./assets/pexels-arina-krasnikova-7377009.jpg" alt="">
-                                </div>
-
-                                <div id="drinkHeader">
-                                    <h2>Casino Royale</h2>
-                                </div>
-
-                                <div id="drinkGlass">
-                                    <img src="./assets/sour-glass.svg" alt="">
-                                    <p>Sour Glass</p>
-                                </div>
-
-                                <div id="drinkIngredients"></div>
-
-                                <div id="drinkInstructions"></div>
-
-                                <div class="drinkAgain">
-                                    <button id="drinkAgainBtn">Choose another drink</button>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
+            <div id="drinkSlide" class="inactiveDrink">
+                <div class="contentContainer content themed darkModeContent">
+                    <section class="displayArea">
+                        <div class="drinkAndImageContainer">   
+                            <div id="drinkImage">
+                                <img src="./assets/pexels-arina-krasnikova-7377009.jpg" alt="">
+                            </div>
 
+                            <div id="drinkHeader">
+                                <h2>Casino Royale</h2>
+                            </div>
+                        </div> 
+                        <div id="drinkGlass">
+                            <img src="./assets/sour-glass.svg" alt="">
+                            <p>Sour Glass</p>
+                        </div>
+
+                        <div id="drinkIngredients"></div>
+
+                        <div id="drinkInstructions"></div>
+
+                        <div class="drinkAgain">
+                            <button id="drinkAgainBtn">Choose another drink</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </main>
 
         <footer class="themed darkMode">
