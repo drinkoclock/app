@@ -8,11 +8,13 @@
 
 main {
     background-image: url(../assets/Background-1.jpg);
-    height: calc(100vh - 150px);
+    min-height: calc(100vh - 150px);
     width: 100%;
+    position: relative;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+    padding: 40px;
 }
 
 .contentContainer {
@@ -23,7 +25,7 @@ main {
     box-shadow: 0 0 30px rgba($color: $darkGrey, $alpha: 0.6);
     font-family: 'Red Hat Display';
     text-align: center;
-    padding: 20px 0;
+    padding-bottom: 20px;
 }
 
 .displayArea {
@@ -34,30 +36,36 @@ main {
     position: relative;
 }
 
+.drinkAndImageContainer {
+    width: 100%;
+    display: flex;
+}
+
 #drinkImage {
-    width: 160px;
-    height: 160px;
-    border: 14px solid $darkGrey;
+    width: 16%;
     overflow: hidden;
-    border-radius: 50%;
-    position: absolute;
-    top: -160px;
+    border-radius: 40px 0 0 0;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     img {
-        width: inherit;
-        height: inherit;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
     }
 }
 
 #drinkHeader {
     background-color: $darkGrey;
-    min-height: 100px;
     width: 100%;
-    margin-top: -40px;
-    border-radius: 40px 40px 0 0;
+    border-radius: 0 40px 0 0;
+    padding: 20px 40px;
+    transition: 0.4s all;
+}
+
+.lightModeContent #drinkHeader {
+    background: $accentYellow;
 }
 
 #drinkGlass {
@@ -65,12 +73,13 @@ main {
     display: flex;
     justify-content: center;
     gap: 6px;
-    padding: 20px 0 24px;
-    margin: 10px 40px;
-    border-bottom: 1px solid rgba($color: white, $alpha: 0.3);
+    padding: 10px;
+    margin: 0 0 20px 0;
+    background-color: rgba(255,255,255,0.05);
+    transition: 0.4s all;
 
     img {
-        width: 60px;
+        width: 40px;
         transition: all 0.2s;
 
         &:hover {
@@ -79,9 +88,13 @@ main {
     }
 }
 
+.lightModeContent #drinkGlass {
+    background-color: white;
+}
+
 #drinkIngredients {
     padding: 20px 20px 20px 40px;
-    width: 400px;
+    width: 50%;
 }
 
 #ingList {
@@ -90,18 +103,21 @@ main {
     background-color: rgba($color: white, $alpha: 0.05);
     border-radius: 20px;
     box-shadow: 0 0 30px rgba($color: $darkGrey, $alpha: 0.6);
+    font-size: 0.9rem;
+    transition: 0.4s all;
 }
 
 .infoContainer {
     border-bottom: 1px solid rgba($color: white, $alpha: 0.3);
     display: flex;
+    transition: 0.4s all;
 
     &:last-child {
         border-bottom: none;
     }
 
     div {
-        padding: 12px 20px;
+        padding: 8px 12px;
     }
 }
 
@@ -110,12 +126,30 @@ main {
     width: 30%;
     border-right: 1px solid rgba($color: white, $alpha: 0.3);
     font-weight: 500;
+    transition: 0.4s all;
 }
 
 .ingredientContainer {
     text-align: left;
     width: 70%;
     font-weight: 100;
+}
+
+.lightModeContent #ingList {
+    box-shadow: 0 0 30px rgba(35, 35, 35, 0.1);
+    background-color: white;
+
+    .infoContainer {
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    
+    .measurementContainer {
+        border-right: 1px solid #eee;
+    }
 }
 
 #drinkInstructions {
@@ -126,7 +160,7 @@ main {
 
 .drinkAgain {
     width: 100%;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 #drinkAgainBtn {
@@ -140,34 +174,17 @@ main {
     }
 }
 
-.sliderContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider {
-    width: 100%;
-    max-width: 80%;
-    height: 100%;
-    max-height: 500px;
-    position: relative;
-    top: 40vh;
-}
-
 #formSlide,
 #drinkSlide {
     width: 100%;
-    height: 100%;
-    max-height: 100%;
-    position: absolute;
+    position: relative;
     transition: all 0.5s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.8rem;
+}
+
+#formSlide {
+    position: absolute;
+    top: 20px;
+    left: 0;
 }
 
 .hidden {
