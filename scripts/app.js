@@ -104,13 +104,13 @@ const drinkApp = {
         drinkApp.loader.classList.toggle('isNotLoading');
         setTimeout(function () { drinkApp.loader.classList.toggle('isNotLoading') }, 1000)
     },
-        // will display drink glass type, uses regex to remove special characters & whitespace to match corresponding svg file
-        populateGlass: (glass) => {
-            document.querySelector('#drinkGlass').innerHTML = `
+    // will display drink glass type, uses regex to remove special characters & whitespace to match corresponding svg file
+    populateGlass: (glass) => {
+        document.querySelector('#drinkGlass').innerHTML = `
                 <img src='./assets/${glass.replace(/[.*+?^${}()|/[\]\\\s]/g, '')}.svg' >
                 <p>${glass}</p>
             `;
-        },
+    },
     // this inserts the instructions from the API into the HTML element
     populateInstructions: (inst) => {
         // clears the innerHTML and opens an ordered list
@@ -173,12 +173,20 @@ const drinkApp = {
         // when for loop is complete
         drinkApp.ingredients.innerHTML += "</div";
     },
+
+    share: () => {
+        document.querySelector('#shareLine').addEventListener('click', function (e) {
+            e.preventDefault;
+            document.querySelector('#shareLink').classList.toggle('shareHidden');
+        })
+    },
     // app init creates form event listener for submission
     init: () => {
         drinkApp.select();
         drinkApp.random();
         drinkApp.drinkAgain();
         drinkApp.takeMeBack();
+        drinkApp.share();
     }
 };
 
