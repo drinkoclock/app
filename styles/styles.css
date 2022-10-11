@@ -528,6 +528,7 @@ main {
 }
 
 .inactiveForm {
+  display: none;
   -webkit-transform: translateX(-150%);
           transform: translateX(-150%);
 }
