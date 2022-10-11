@@ -37,6 +37,7 @@ const drinkApp = {
                     .then((data) => data.drinks[0])
                 console.log(response);
                 if (response.strInstructions) {
+                    drinkApp.drinkId = id;
                     drinkApp.populateInstructions(response.strInstructions);
                     drinkApp.populateIngredients(response);
                     drinkApp.populateGlass(response.strGlass);
@@ -177,7 +178,14 @@ const drinkApp = {
     share: () => {
         document.querySelector('#shareLine').addEventListener('click', function (e) {
             e.preventDefault;
+            const drinkURL = `${window.location.href}/drink?id=${drinkApp.drinkId}`;
+            document.querySelector('#shareLink').addEventListener('click', function () {
+                window.location.href = drinkURL;
+            })
             document.querySelector('#shareLink').classList.toggle('shareHidden');
+            document.querySelector('#shareLink').innerHTML = `
+            ${drinkURL}
+            `
         })
     },
     // app init creates form event listener for submission
