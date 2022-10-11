@@ -107,7 +107,7 @@ const drink = {
             e.preventDefault();
             const end = window.location.href.indexOf('?');
             url = window.location.href.slice(0, end);
-            newUrl = url.replace('drink', 'index');
+            newUrl = url.replace('drink.html', '');
             window.location.href = newUrl;
         })
     },

@@ -35,7 +35,6 @@ const drinkApp = {
                 const response = await fetch(url)
                     .then((promise) => promise.json())
                     .then((data) => data.drinks[0])
-                console.log(response);
                 if (response.strInstructions) {
                     drinkApp.drinkId = id;
                     drinkApp.populateInstructions(response.strInstructions);
@@ -178,7 +177,10 @@ const drinkApp = {
     share: () => {
         document.querySelector('#shareLine').addEventListener('click', function (e) {
             e.preventDefault;
-            const drinkURL = window.location.href.replace('index.html', 'drink.html?id=') + drinkApp.drinkId;
+            // this is for local testing
+            // const drinkURL = window.location.href.replace('index.html', 'drink.html?id=') + drinkApp.drinkId;
+            // this is for live site
+            const drinkURL = `${window.location.href}/drink.html?id=${drinkApp.drinkId}`
             document.querySelector('#shareLink').addEventListener('click', function () {
                 window.location.href = drinkURL;
             })
@@ -226,7 +228,6 @@ const darkMode = {
     isActive: () => {
         let val;
         try {
-            console.log('checking')
             val = JSON.parse(window.localStorage.getItem('isDarkMode') || String(defaultVal));
         } catch (e) {
             console.log(e);
