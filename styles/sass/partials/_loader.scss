@@ -1,25 +1,58 @@
 @use "variables" as *;
 
 @keyframes glassBounce {
-
-    0% { 
-        transform: scale(1,1) translateY(0);
+    0% {
+        transform: scale(1, 1) rotate(0deg);
         opacity: 0;
     }
+
     10% {
-        transform: scale(1.05,0.95) translateY(0);
+        transform: scale(1.05, 0.95) rotate(5deg);
         opacity: 20;
     }
+
+    20% {
+        transform: scale(0.95, 1.05) rotate(0deg);
+        opacity: 100;
+    }
+
     30% {
-        transform: scale(0.95,1.05) translateY(-100px);
+        transform: scale(1.05, 0.95) rotate(-5deg);
         opacity: 100;
     }
+
+    40% {
+        transform: scale(1, 1) rotate(0deg);
+        opacity: 100;
+    }
+
     50% {
-        transform: scale(1.05,0.95) translateY(0);
+        transform: scale(1.05, 0.95) rotate(5deg);
         opacity: 100;
     }
+
+    60% {
+        transform: scale(0.95, 1.05) rotate(0deg);
+        opacity: 100;
+    }
+
+    70% {
+        transform: scale(1.05, 0.95) rotate(-5deg);
+        opacity: 100;
+    }
+
+    80% {
+        transform: scale(1, 1) rotate(0deg);
+        opacity: 100;
+    }
+
+    90% {
+        transform: scale(1.05, 0.95) rotate(5deg);
+        opacity: 100;
+    }
+
     100% {
-        transform: scale(1,1) translateY(0);
+        transform: scale(0.95, 1.05) rotate(0deg);
         opacity: 100;
     }
 }

@@ -740,56 +740,116 @@ input:checked + .darkModeSlider:before {
 
 @-webkit-keyframes glassBounce {
   0% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    -webkit-transform: scale(1, 1) rotate(0deg);
+            transform: scale(1, 1) rotate(0deg);
     opacity: 0;
   }
   10% {
-    -webkit-transform: scale(1.05, 0.95) translateY(0);
-            transform: scale(1.05, 0.95) translateY(0);
+    -webkit-transform: scale(1.05, 0.95) rotate(5deg);
+            transform: scale(1.05, 0.95) rotate(5deg);
     opacity: 20;
   }
+  20% {
+    -webkit-transform: scale(0.95, 1.05) rotate(0deg);
+            transform: scale(0.95, 1.05) rotate(0deg);
+    opacity: 100;
+  }
   30% {
-    -webkit-transform: scale(0.95, 1.05) translateY(-100px);
-            transform: scale(0.95, 1.05) translateY(-100px);
+    -webkit-transform: scale(1.05, 0.95) rotate(-5deg);
+            transform: scale(1.05, 0.95) rotate(-5deg);
+    opacity: 100;
+  }
+  40% {
+    -webkit-transform: scale(1, 1) rotate(0deg);
+            transform: scale(1, 1) rotate(0deg);
     opacity: 100;
   }
   50% {
-    -webkit-transform: scale(1.05, 0.95) translateY(0);
-            transform: scale(1.05, 0.95) translateY(0);
+    -webkit-transform: scale(1.05, 0.95) rotate(5deg);
+            transform: scale(1.05, 0.95) rotate(5deg);
+    opacity: 100;
+  }
+  60% {
+    -webkit-transform: scale(0.95, 1.05) rotate(0deg);
+            transform: scale(0.95, 1.05) rotate(0deg);
+    opacity: 100;
+  }
+  70% {
+    -webkit-transform: scale(1.05, 0.95) rotate(-5deg);
+            transform: scale(1.05, 0.95) rotate(-5deg);
+    opacity: 100;
+  }
+  80% {
+    -webkit-transform: scale(1, 1) rotate(0deg);
+            transform: scale(1, 1) rotate(0deg);
+    opacity: 100;
+  }
+  90% {
+    -webkit-transform: scale(1.05, 0.95) rotate(5deg);
+            transform: scale(1.05, 0.95) rotate(5deg);
     opacity: 100;
   }
   100% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    -webkit-transform: scale(0.95, 1.05) rotate(0deg);
+            transform: scale(0.95, 1.05) rotate(0deg);
     opacity: 100;
   }
 }
 
 @keyframes glassBounce {
   0% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    -webkit-transform: scale(1, 1) rotate(0deg);
+            transform: scale(1, 1) rotate(0deg);
     opacity: 0;
   }
   10% {
-    -webkit-transform: scale(1.05, 0.95) translateY(0);
-            transform: scale(1.05, 0.95) translateY(0);
+    -webkit-transform: scale(1.05, 0.95) rotate(5deg);
+            transform: scale(1.05, 0.95) rotate(5deg);
     opacity: 20;
   }
+  20% {
+    -webkit-transform: scale(0.95, 1.05) rotate(0deg);
+            transform: scale(0.95, 1.05) rotate(0deg);
+    opacity: 100;
+  }
   30% {
-    -webkit-transform: scale(0.95, 1.05) translateY(-100px);
-            transform: scale(0.95, 1.05) translateY(-100px);
+    -webkit-transform: scale(1.05, 0.95) rotate(-5deg);
+            transform: scale(1.05, 0.95) rotate(-5deg);
+    opacity: 100;
+  }
+  40% {
+    -webkit-transform: scale(1, 1) rotate(0deg);
+            transform: scale(1, 1) rotate(0deg);
     opacity: 100;
   }
   50% {
-    -webkit-transform: scale(1.05, 0.95) translateY(0);
-            transform: scale(1.05, 0.95) translateY(0);
+    -webkit-transform: scale(1.05, 0.95) rotate(5deg);
+            transform: scale(1.05, 0.95) rotate(5deg);
+    opacity: 100;
+  }
+  60% {
+    -webkit-transform: scale(0.95, 1.05) rotate(0deg);
+            transform: scale(0.95, 1.05) rotate(0deg);
+    opacity: 100;
+  }
+  70% {
+    -webkit-transform: scale(1.05, 0.95) rotate(-5deg);
+            transform: scale(1.05, 0.95) rotate(-5deg);
+    opacity: 100;
+  }
+  80% {
+    -webkit-transform: scale(1, 1) rotate(0deg);
+            transform: scale(1, 1) rotate(0deg);
+    opacity: 100;
+  }
+  90% {
+    -webkit-transform: scale(1.05, 0.95) rotate(5deg);
+            transform: scale(1.05, 0.95) rotate(5deg);
     opacity: 100;
   }
   100% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    -webkit-transform: scale(0.95, 1.05) rotate(0deg);
+            transform: scale(0.95, 1.05) rotate(0deg);
     opacity: 100;
   }
 }
