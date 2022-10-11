@@ -192,7 +192,7 @@ h2 {
   font-family: "Archivo Black";
   font-size: 3rem;
   line-height: 3rem;
-  margin: 30px 0 8px 0;
+  margin: 0;
   padding: 0;
   color: #ffe600;
   text-align: left;
@@ -372,7 +372,13 @@ main {
   background-color: #232323;
   width: 100%;
   border-radius: 0 40px 0 0;
-  padding: 20px 40px;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
 }
@@ -861,6 +867,10 @@ input:checked + .darkModeSlider:before {
     padding: 40px 0px;
     min-height: calc(100vh - 205px);
   }
+  h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
 }
 @media (max-width: 480px) {
   .contentContainer {
@@ -888,6 +898,9 @@ input:checked + .darkModeSlider:before {
     border-radius: 0;
     padding: 20px;
     margin-top: 36%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   h2 {
     font-size: 1.8rem;

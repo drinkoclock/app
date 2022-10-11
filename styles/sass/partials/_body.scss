@@ -60,7 +60,9 @@ main {
     background-color: $darkGrey;
     width: 100%;
     border-radius: 0 40px 0 0;
-    padding: 20px 40px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
     transition: 0.4s all;
 }
 

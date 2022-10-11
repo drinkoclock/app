@@ -84,6 +84,11 @@
         min-height: calc(100vh - 205px);
     }
 
+    h2 {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
 }
 
 
@@ -115,6 +120,7 @@
         border-radius: 0;
         padding: 20px;
         margin-top: 36%;
+        justify-content: center;
     }
 
     h2 {
