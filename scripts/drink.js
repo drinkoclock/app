@@ -1,3 +1,5 @@
+defaultVal = "true";
+
 const drink = {
     instructions: document.getElementById('drinkInstructions'),
     ingredients: document.getElementById('drinkIngredients'),
