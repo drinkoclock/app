@@ -533,7 +533,6 @@ main {
 }
 
 .inactiveDrink {
-  display: none;
   -webkit-transform: translateX(150%);
           transform: translateX(150%);
 }
@@ -998,6 +997,9 @@ input:checked + .darkModeSlider:before {
   footer span {
     font-size: 0.8rem;
     line-height: 0.9rem;
+  }
+  .inactiveDrink {
+    display: none;
   }
 }
 .bounce-in-right {
