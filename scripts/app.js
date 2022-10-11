@@ -65,6 +65,7 @@ const drinkApp = {
     // toggles classes on / off depending on state 
     toggleActive: (isNewDrink) => {
         drinkApp.formSlide.classList.toggle('inactiveForm');
+        document.querySelector('#shareLink').classList.add('shareHidden');
         // only calls loading animation when it's a new drink request, otherwise instantaneous
         if (isNewDrink) {
             drinkApp.loading();
