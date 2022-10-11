@@ -8,6 +8,7 @@ const drinkApp = {
     formSlide: document.querySelector('#formSlide'),
     drinkSlide: document.querySelector('#drinkSlide'),
     drinkImage: document.querySelector('#drinkImage'),
+    drinkGlass: document.querySelector('#drinkGlass'),
     loader: document.querySelector('#loaderContainer'),
     // API URL and extensions used to find 
     baseUrl: 'https://www.thecocktaildb.com/api/json/v1/1/',
@@ -39,9 +40,9 @@ const drinkApp = {
                 if (response.strInstructions) {
                     drinkApp.populateInstructions(response.strInstructions);
                     drinkApp.populateIngredients(response);
-                    drinkApp.populateGlass(response.strGlass);
                     drinkApp.toggleActive(true);
                     drinkApp.drinkImage.innerHTML = `<img src="${response.strDrinkThumb}" alt="${response.strDrink}" >`;
+                    drinkApp.drinkGlass.lastElementChild.innerHTML = `${response.strGlass}`;
                     document.querySelector('#drinkHeader').innerHTML = `<h2>${response.strDrink}</h2>`
                     document.querySelector('title').innerHTML = `Drink O'Clock - ${response.strDrink}`
                     break;
@@ -68,11 +69,15 @@ const drinkApp = {
         // only calls loading animation when it's a new drink request, otherwise instantaneous
         if (isNewDrink) {
             drinkApp.loading();
-            setTimeout(function() {drinkApp.drinkSlide.classList.toggle('inactiveDrink')}, 1000);
+            setTimeout(function () { drinkApp.drinkSlide.classList.toggle('inactiveDrink') }, 1000);
+            setTimeout(function () { drinkApp.drinkSlide.classList.toggle('bounce-in-right') }, 1000);
+            setTimeout(function () { drinkApp.formSlide.classList.toggle('bounce-in-left') }, 1000);
         } else {
             drinkApp.drinkSlide.classList.toggle('inactiveDrink');
+            drinkApp.drinkSlide.classList.toggle('bounce-in-right');
+            drinkApp.formSlide.classList.toggle('bounce-in-left');
         }
-        
+
     },
     // on button click, will prevent page refresh and return a random drink
     random: () => {
@@ -99,13 +104,6 @@ const drinkApp = {
     loading: () => {
         drinkApp.loader.classList.toggle('isNotLoading');
         setTimeout(function () { drinkApp.loader.classList.toggle('isNotLoading') }, 1000)
-    },
-    // will display drink glass type, uses regex to remove special characters & whitespace to match corresponding svg file
-    populateGlass: (glass) => {
-        document.querySelector('#drinkGlass').innerHTML = `
-            <img src='./assets/${glass.replace(/[.*+?^${}()|/[\]\\\s]/g, '')}.svg' >
-            <p>${glass}</p>
-        `;
     },
     // this inserts the instructions from the API into the HTML element
     populateInstructions: (inst) => {
