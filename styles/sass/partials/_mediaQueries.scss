@@ -1,0 +1,156 @@
+
+
+// Tablet landscape sizing - 1024px
+
+@media (max-width: 1024px) {
+
+    .contentContainer {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+        line-height: 2.4rem;
+        margin: 0;
+    }
+
+    #drinkImage {
+        width: 24%;
+    }
+
+}
+
+
+
+// Custom breakpoint for drink ingredients and instructions - 900px
+
+@media (max-width: 900px) {
+    
+    #drinkIngredients, #drinkInstructions {
+        width: 100%;
+        padding: 20px 40px;
+    }
+
+    .drinkAgain {
+        margin-top: 0;
+    }
+
+}
+
+
+
+// Tablet sizing - 768px
+
+@media (max-width: 768px) {
+
+    h1 {
+        line-height: 1.8rem;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #alcoholRandom {
+        margin-top: 20px;
+    }
+
+    .drinkAgain {
+        margin-top: -20px;
+        width: calc(100% - 80px);
+    }
+
+    footer span {
+        font-size: 0.9rem;
+    }
+
+}
+
+
+
+// Custom breakpoint for drink and ingredient instructions - 640px
+
+@media (max-width: 640px) {
+    
+    nav {
+        flex-flow: column-reverse;
+        align-items: flex-end;
+        height: auto;
+        padding: 20px 20px 0 20px;
+    }
+
+    main {
+        padding: 40px 0px;
+        min-height: calc(100vh - 205px);
+    }
+
+}
+
+
+
+// Large mobile sizing - 480px
+
+@media (max-width: 480px) {
+    
+    .contentContainer {
+        margin-top: 40px;
+    }
+
+    .drinkAndImageContainer {
+        flex-flow: row wrap;
+        justify-content: center;
+        background-color: #232323;
+        border-radius: 40px 40px 0 0;
+        position: relative;
+    }
+
+    #drinkImage {
+        width: 50%;
+        border-radius: 50%;
+        position: absolute;
+        top: -60px;
+    }
+
+    #drinkHeader {
+        border-radius: 0;
+        padding: 20px;
+        margin-top: 36%;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+        text-align: center;
+    }
+
+    #drinkIngredients, #drinkInstructions {
+        padding: 20px;
+    }
+
+    #ingList {
+        font-size: 0.8rem;
+        line-height: 0.8rem;
+        border-radius: 12px;
+    }
+
+    li {
+        font-size: 0.8rem;
+        line-height: 1.05rem;
+        padding-bottom: 10px;
+    }
+
+    footer {
+        padding: 20px;
+        text-align: center;
+        height: auto;
+        span {
+            font-size: 0.8rem;
+            line-height: 0.9rem;
+        }
+    }
+
+}
+
+
+
+// Mobile sizing - 320px
