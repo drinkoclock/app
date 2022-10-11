@@ -178,7 +178,7 @@ const drinkApp = {
     share: () => {
         document.querySelector('#shareLine').addEventListener('click', function (e) {
             e.preventDefault;
-            const drinkURL = `${window.location.href}/drink?id=${drinkApp.drinkId}`;
+            const drinkURL = window.location.href.replace('index.html', 'drink.html?id=') + drinkApp.drinkId;
             document.querySelector('#shareLink').addEventListener('click', function () {
                 window.location.href = drinkURL;
             })
