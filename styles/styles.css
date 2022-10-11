@@ -232,6 +232,12 @@ li {
   color: #232323;
 }
 
+a {
+  text-decoration: none;
+  color: #828282;
+  font-weight: 700;
+}
+
 html {
   font-size: 125%;
   overflow-x: hidden;
@@ -947,6 +953,9 @@ input:checked + .darkModeSlider:before {
     background-color: #232323;
     border-radius: 40px 40px 0 0;
     position: relative;
+  }
+  .lightModeContent .drinkAndImageContainer {
+    background-color: #ffe600;
   }
   #drinkImage {
     width: 50%;

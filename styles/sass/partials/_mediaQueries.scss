@@ -1,4 +1,4 @@
-
+@use "variables" as *;
 
 // Tablet landscape sizing - 1024px
 
@@ -109,6 +109,10 @@
         position: relative;
     }
 
+    .lightModeContent .drinkAndImageContainer {
+        background-color: $accentYellow;
+    }
+
     #drinkImage {
         width: 50%;
         border-radius: 50%;
@@ -156,7 +160,3 @@
     }
 
 }
-
-
-
-// Mobile sizing - 320px
