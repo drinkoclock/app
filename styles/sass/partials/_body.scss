@@ -194,10 +194,10 @@ main {
 }
 
 .inactiveForm {
-    display: none;
     transform: translateX(-150%);
 }
 
 .inactiveDrink {
+    display: none;
     transform: translateX(150%);
 }
