@@ -19,9 +19,8 @@ const drink = {
         url.search = new URLSearchParams({ i: id })
         try {
             const response = await fetch(url)
-            .then((promise) => promise.json())
-            .then((data) => data.drinks[0])
-            console.log(response)
+                .then((promise) => promise.json())
+                .then((data) => data.drinks[0])
             if (response.strInstructions) {
                 drink.populateInstructions(response.strInstructions);
                 drink.populateIngredients(response);
@@ -102,6 +101,19 @@ const drink = {
         // when for loop is complete
         drink.ingredients.innerHTML += "</div";
     },
+    // button redirects to main page so user can select another drink
+    chooseAnother: () => {
+        document.querySelector('#drinkAgainBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const end = window.location.href.indexOf('?');
+            url = window.location.href.slice(0, end);
+            newUrl = url.replace('drink', 'index');
+            window.location.href = newUrl;
+        })
+    },
+    init: () => {
+        drink.chooseAnother();
+    }
 }
 
 const darkMode = {
@@ -115,7 +127,7 @@ const darkMode = {
             } else if (item.classList.contains('text')) {
                 item.classList.toggle('darkModeText');
                 item.classList.toggle('lightModeText');
-            } else if (item.classList.contains('list')){
+            } else if (item.classList.contains('list')) {
                 item.classList.toggle('darkModeList');
                 item.classList.toggle('lightModeList');
             } else {
@@ -156,6 +168,6 @@ const darkMode = {
     }
 }
 // searches the web address and obtains id search param
-
+drink.init();
 darkMode.init();
 drink.populateDrink();
