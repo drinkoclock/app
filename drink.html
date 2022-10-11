@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <nav class="themed darkMode">
+                <div id="titleContainer">
+                    <img src="./assets/drink-oclock-logo.svg" alt="Drink O'Clock Logo">
+                    <h1 class="themed darkMode">Drink O'Clock</h1>
+                </div>
+
+                <div class="switch">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="darkModeSlider round"></div>
+                    </label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="drinkSlide" >
+            <div class="contentContainer content themed darkModeContent">
+                <section class="displayArea">
+                    <div class="drinkAndImageContainer">
+                        <div id="drinkImage"></div>
+                        <div id="drinkHeader"></div>
+                    </div>
+
+                    <div id="drinkGlass"></div>
+                    <div id="drinkIngredients"></div>
+                    <div id="drinkInstructions"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="themed darkMode">
+        <span>Created by Joel Nash & Karl Lu at Juno College 2022</span>
+    </footer>
+    <script src="./scripts/drink.js"></script>
+</body>
+</html>
