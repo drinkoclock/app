@@ -96,7 +96,9 @@
 // Large mobile sizing - 480px
 
 @media (max-width: 480px) {
-    
+    main {
+        min-height: calc(100vh - 184px);
+    }
     .contentContainer {
         margin-top: 40px;
     }

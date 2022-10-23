@@ -62,7 +62,8 @@
     height: 100vh;
     position: fixed;
     background: url("../assets/loadingimagebg.svg") center no-repeat;
-    background-size: 100px;
+    background-size: 150px;
+    background-position-y: 20vh;
     z-index: 1;
     opacity: 0;
     animation: glassBounce 1.6s ease 1;
