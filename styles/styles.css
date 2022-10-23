@@ -536,11 +536,13 @@ main {
 .inactiveForm {
   -webkit-transform: translateX(-150%);
           transform: translateX(-150%);
+  display: none;
 }
 
 .inactiveDrink {
   -webkit-transform: translateX(150%);
           transform: translateX(150%);
+  display: none;
 }
 
 footer {
@@ -948,6 +950,9 @@ input:checked + .darkModeSlider:before {
 @media (max-width: 480px) {
   main {
     min-height: calc(100vh - 184px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .contentContainer {
     margin-top: 40px;
@@ -1008,11 +1013,8 @@ input:checked + .darkModeSlider:before {
     font-size: 0.8rem;
     line-height: 0.9rem;
   }
-  .inactiveDrink {
-    display: none;
-  }
   #formSlide {
-    top: 10vh;
+    position: relative;
   }
 }
 .bounce-in-right {

@@ -34,7 +34,6 @@
     .drinkAgain {
         margin-top: 0;
     }
-
 }
 
 
@@ -98,7 +97,9 @@
 @media (max-width: 480px) {
     main {
         min-height: calc(100vh - 184px);
+        display: flex;
     }
+
     .contentContainer {
         margin-top: 40px;
     }
@@ -161,11 +162,7 @@
         }
     }
 
-    .inactiveDrink {
-        display: none;
-    }
-
     #formSlide {
-        top: 10vh;
+        position: relative;
     }
 }
