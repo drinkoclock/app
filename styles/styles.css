@@ -498,7 +498,7 @@ main {
 
 .drinkAgain {
   width: 100%;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 #drinkAgainBtn {
@@ -900,7 +900,8 @@ input:checked + .darkModeSlider:before {
   }
 }
 @media (max-width: 900px) {
-  #drinkIngredients, #drinkInstructions {
+  #drinkIngredients,
+#drinkInstructions {
     width: 100%;
     padding: 20px 40px;
   }
@@ -991,7 +992,8 @@ input:checked + .darkModeSlider:before {
     line-height: 1.8rem;
     text-align: center;
   }
-  #drinkIngredients, #drinkInstructions {
+  #drinkIngredients,
+#drinkInstructions {
     padding: 20px;
   }
   #ingList {
@@ -1015,6 +1017,9 @@ input:checked + .darkModeSlider:before {
   }
   #formSlide {
     position: relative;
+  }
+  #drinkInstructions h3, #drinkIngredients h3 {
+    text-align: center;
   }
 }
 .bounce-in-right {
