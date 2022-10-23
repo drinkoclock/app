@@ -2,19 +2,27 @@
 
 nav {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 100px;
     font-family: 'Archivo Black';
     color: $darkGrey;
-    align-items: center;
-    justify-content: space-between;
     padding: 0 20px;
     background-color: $darkGrey;
+
     img {
         max-width: 70px;
     }
 }
 
 #titleContainer {
-    width:100%;
+    width: 100%;
     display: flex;
+}
+
+@media (max-width: 480px) {
+    #titleContainer {
+        margin-top: -72px;
+        margin-bottom: -12px;
+    }
 }
