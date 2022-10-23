@@ -6,15 +6,26 @@
     margin: auto;
 }
 
+html {
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 main {
     background-image: url(../assets/Background-1.jpg);
     min-height: calc(100vh - 150px);
     width: 100%;
     position: relative;
-    background-position: center center;
-    background-size: cover;
+    background-position: center 0;
+    // background-size: cover;
     background-repeat: no-repeat;
     padding: 40px;
+    // height: 80vh;
+    // overflow: scroll;
 }
 
 .contentContainer {
@@ -184,12 +195,6 @@ main {
     transition: all 0.5s;
 }
 
-#formSlide {
-    position: absolute;
-    top: 26%;
-    left: 0;
-}
-
 .hidden {
     display: none !important;
 }
@@ -201,5 +206,9 @@ main {
 
 .inactiveDrink {
     transform: translateX(150%);
+    display: none;
+}
+
+.titleBreak {
     display: none;
 }

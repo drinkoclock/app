@@ -20,8 +20,6 @@
 
 }
 
-
-
 // Custom breakpoint for drink ingredients and instructions - 900px
 
 @media (max-width: 900px) {
@@ -81,7 +79,7 @@
 
     main {
         padding: 40px 0px;
-        min-height: calc(100vh - 205px);
+        min-height: calc(100vh - 158px);
     }
 
     h2 {
@@ -89,6 +87,14 @@
         line-height: 2rem;
     }
 
+    #titleContainer {
+        margin-top: -72px;
+        margin-bottom: -12px;
+    }
+
+    .titleBreak {
+        display: block;
+    }
 }
 
 
@@ -97,7 +103,7 @@
 
 @media (max-width: 480px) {
     main {
-        min-height: calc(100vh - 184px);
+        min-height: calc(100vh - 166px);
         display: flex;
     }
 
