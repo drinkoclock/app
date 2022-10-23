@@ -1011,6 +1011,9 @@ input:checked + .darkModeSlider:before {
   .inactiveDrink {
     display: none;
   }
+  #formSlide {
+    top: 10vh;
+  }
 }
 .bounce-in-right {
   -webkit-animation: bounce-in-right 1s ease-in-out;
