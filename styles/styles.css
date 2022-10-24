@@ -706,6 +706,19 @@ button {
   font-weight: 400;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+#takeMeBack img {
+  width: 20px;
+  color: #ffe600;
+  -webkit-filter: invert(90%) sepia(24%) saturate(2125%) hue-rotate(357deg) brightness(101%) contrast(102%);
+          filter: invert(90%) sepia(24%) saturate(2125%) hue-rotate(357deg) brightness(101%) contrast(102%);
 }
 #takeMeBack:hover, #takeMeBack:focus {
   -webkit-transform: scale(1.15);
@@ -717,6 +730,14 @@ button {
   top: 5px;
 }
 
+@media (max-width: 480px) {
+  #takeMeBack {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .theme-switch {
   display: inline-block;
   height: 34px;

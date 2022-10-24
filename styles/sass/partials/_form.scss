@@ -92,6 +92,14 @@ button {
     padding: 5px 0;
     font-weight: 400;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    img {
+        width: 20px;
+        color: $accentYellow;
+        filter: invert(90%) sepia(24%) saturate(2125%) hue-rotate(357deg) brightness(101%) contrast(102%);
+    }
     &:hover, &:focus {
         transform: scale(1.15);
     }
@@ -100,4 +108,10 @@ button {
 .material-icons {
     position: relative;
     top: 5px;
+}
+
+@media (max-width: 480px) {
+    #takeMeBack {
+        flex-direction: column;
+    }
 }
