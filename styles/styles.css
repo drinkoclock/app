@@ -326,6 +326,7 @@ main {
   background-position: center 0;
   background-repeat: no-repeat;
   padding: 40px;
+  overflow: hidden;
 }
 
 .contentContainer {
