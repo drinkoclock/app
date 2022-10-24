@@ -65,6 +65,10 @@ const drinkApp = {
     // toggles classes on / off depending on state 
     toggleActive: (isNewDrink) => {
         drinkApp.formSlide.classList.toggle('inactiveForm');
+        // when grabbin drinkDetails, sets formSlide to display: none to avoid displacement
+        // (drinkApp.formSlide.classList.contains('inactiveForm') 
+        // ? setTimeout(function () {drinkApp.formSlide.classList.toggle('inactiveFormState')}, 100) 
+        // : drinkApp.formSlide.classList.toggle('inactiveFormState'));
         document.querySelector('#shareLink').classList.add('shareHidden');
         // only calls loading animation when it's a new drink request, otherwise instantaneous
         if (isNewDrink) {

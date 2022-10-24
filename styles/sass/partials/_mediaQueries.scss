@@ -103,7 +103,7 @@
 
 @media (max-width: 480px) {
     main {
-        min-height: calc(100vh - 166px);
+        min-height: calc(100vh - 184px);
         display: flex;
     }
 
@@ -169,10 +169,6 @@
             font-size: 0.8rem;
             line-height: 0.9rem;
         }
-    }
-
-    #formSlide {
-        position: relative;
     }
 
     #drinkInstructions, #drinkIngredients {

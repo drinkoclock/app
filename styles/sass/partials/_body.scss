@@ -191,8 +191,19 @@ main {
 #formSlide,
 #drinkSlide {
     width: 100%;
-    position: relative;
     transition: all 0.5s;
+}
+
+#formSlide {
+    top: 10vh;
+    position: absolute;
+    right: 0px;
+}
+
+#drinkSlide {
+    position: relative;
+    top: 5vh;
+    margin-bottom: 50px;
 }
 
 .hidden {
@@ -201,12 +212,10 @@ main {
 
 .inactiveForm {
     transform: translateX(-150%);
-    display: none;
 }
 
 .inactiveDrink {
     transform: translateX(150%);
-    display: none;
 }
 
 .titleBreak {

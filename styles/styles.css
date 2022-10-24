@@ -522,9 +522,20 @@ main {
 #formSlide,
 #drinkSlide {
   width: 100%;
-  position: relative;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+#formSlide {
+  top: 10vh;
+  position: absolute;
+  right: 0px;
+}
+
+#drinkSlide {
+  position: relative;
+  top: 5vh;
+  margin-bottom: 50px;
 }
 
 .hidden {
@@ -534,13 +545,11 @@ main {
 .inactiveForm {
   -webkit-transform: translateX(-150%);
           transform: translateX(-150%);
-  display: none;
 }
 
 .inactiveDrink {
   -webkit-transform: translateX(150%);
           transform: translateX(150%);
-  display: none;
 }
 
 .titleBreak {
@@ -959,7 +968,7 @@ input:checked + .darkModeSlider:before {
 }
 @media (max-width: 480px) {
   main {
-    min-height: calc(100vh - 166px);
+    min-height: calc(100vh - 184px);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1023,9 +1032,6 @@ input:checked + .darkModeSlider:before {
   footer span {
     font-size: 0.8rem;
     line-height: 0.9rem;
-  }
-  #formSlide {
-    position: relative;
   }
   #drinkInstructions h3, #drinkIngredients h3 {
     text-align: center;
