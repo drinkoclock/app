@@ -168,12 +168,12 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 @font-face {
   font-family: "Archivo Black";
-  src: url(../fonts/Archivo_Black/ArchivoBlack-Regular.ttf);
+  src: url("../fonts/Archivo_Black/ArchivoBlack-Regular.ttf");
   font-weight: bold;
 }
 @font-face {
   font-family: "Red Hat Display";
-  src: url(../fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf);
+  src: url("../fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf");
   font-weight: 125 950;
   font-stretch: 75% 125%;
   font-style: oblique 0deg 12deg;
