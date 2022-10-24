@@ -234,7 +234,6 @@ li {
 
 a {
   text-decoration: none;
-  color: #828282;
   font-weight: 700;
 }
 
@@ -571,6 +570,14 @@ footer span {
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
+}
+
+footer.darkMode span a {
+  color: #ffe600;
+}
+
+footer span a {
+  color: #828282;
 }
 
 form {

@@ -11,3 +11,11 @@ footer {
         margin: auto;
     }
 }
+
+footer.darkMode span a {
+    color: $accentYellow;
+}
+
+footer span a {
+    color: #828282;
+}
