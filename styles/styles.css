@@ -318,7 +318,7 @@ body::-webkit-scrollbar {
 }
 
 main {
-  background-image: url(../assets/Background-1.jpg);
+  background-image: url("../assets/Background-1.webp");
   min-height: calc(100vh - 150px);
   width: 100%;
   position: relative;
